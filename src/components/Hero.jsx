@@ -330,7 +330,7 @@ export default function Hero() {
           transition={{ duration: 1.1, delay: 0.25 }}
           className="flex-shrink-0 flex justify-center order-1 md:order-2
                      scale-[0.65] md:scale-100"
-          style={{ transformOrigin: 'center center' }}
+          style={{ transformOrigin: 'center center', perspective: '1000px' }}
         >
           <img
             src="/brickbygal/globe.png"
@@ -340,6 +340,7 @@ export default function Hero() {
               objectFit: 'contain',
               animation: 'spinGlobe 25s linear infinite',
               filter: 'drop-shadow(0 20px 60px rgba(37,99,235,0.3))',
+              transformStyle: 'preserve-3d',
             }}
           />
         </motion.div>
