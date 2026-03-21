@@ -44,7 +44,8 @@ export default function About() {
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
           className="text-4xl font-black text-center mb-12"
           style={{ fontFamily: 'Nunito' }}
         >
@@ -54,9 +55,10 @@ export default function About() {
         <div className="flex flex-col md:flex-row gap-10 items-center mb-12">
           {/* Avatar */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
             className="flex-shrink-0"
           >
             <img
@@ -67,19 +69,28 @@ export default function About() {
           </motion.div>
 
           {/* Text */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            <p className="text-lg leading-relaxed font-medium">
+          <div className="flex flex-col gap-4">
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
+              className="text-lg leading-relaxed font-medium"
+            >
               התחלתי להרכיב לגו בגיל 10-11. קנו לי מכונית לגו והתחלתי לאהוב את זה משם.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: 'easeOut', delay: 0.35 }}
+              className="text-lg leading-relaxed font-medium"
+            >
               מה שגרם לי לאהוב את התחביב הוא שזו עבודה מתאימה לכל גיל.
               יש לו הרבה יתרונות שעוזרים לי כמו: מוטוריקה עדינה, ריכוז, דיוק, סבלנות,
               עבודה מול תוכנית — וכל מבנה מרשים בפני עצמו.
-            </p>
-          </motion.div>
+            </motion.p>
+          </div>
         </div>
 
         {/* Stats */}
@@ -87,10 +98,10 @@ export default function About() {
           {stats.map((s, i) => (
             <motion.div
               key={s.label}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: 'easeOut', delay: 0.45 + i * 0.1 }}
               className="bg-[#F5F5F0] rounded-2xl p-5 text-center"
               style={{ border: '3px solid #1A1A1A', boxShadow: '4px 4px 0 #1A1A1A' }}
             >
