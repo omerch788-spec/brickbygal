@@ -50,8 +50,8 @@ h1, h2, h3, h4 {
 }
 
 @keyframes spinGlobe {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-360px); }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 @keyframes bounceArrow {

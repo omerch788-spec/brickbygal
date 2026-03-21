@@ -332,7 +332,16 @@ export default function Hero() {
                      scale-[0.65] md:scale-100"
           style={{ transformOrigin: 'center center' }}
         >
-          <LegoGlobe />
+          <img
+            src="/brickbygal/globe.png"
+            alt="LEGO Globe"
+            className="w-[220px] h-[220px] md:w-[350px] md:h-[350px]"
+            style={{
+              objectFit: 'contain',
+              animation: 'spinGlobe 25s linear infinite',
+              filter: 'drop-shadow(0 20px 60px rgba(37,99,235,0.3))',
+            }}
+          />
         </motion.div>
 
       </div>
