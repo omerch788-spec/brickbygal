@@ -4,7 +4,7 @@ import { models } from '../data/models'
 import ModelCard from './ModelCard'
 import ModelModal from './ModelModal'
 
-const CATEGORIES = ['הכל', 'טכניק', 'סיטי', 'שער כוכבים', 'ארכיטקטורה']
+const CATEGORIES = ['הכל', 'טכניק', 'שער כוכבים']
 
 export default function Gallery() {
   const [active, setActive] = useState('הכל')

@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 
 const stats = [
-  { icon: '🧱', value: 8, suffix: '+', label: 'דגמים' },
-  { icon: '⏱', value: 500, suffix: '+', label: 'שעות בנייה' },
-  { icon: '🔩', value: 10000, suffix: '+', label: 'חלקים' },
+  { icon: '🧱', value: 2, suffix: '+', label: 'דגמים' },
+  { icon: '⏱', value: 100, suffix: '+', label: 'שעות בנייה' },
+  { icon: '🔩', value: 6000, suffix: '+', label: 'חלקים' },
 ]
 
 function CountUp({ target, suffix }) {
@@ -48,7 +48,7 @@ export default function About() {
           className="text-4xl font-black text-center mb-12"
           style={{ fontFamily: 'Nunito' }}
         >
-          מי זה גל?
+          מי זה גל צ'אושו?
         </motion.h2>
 
         <div className="flex flex-col md:flex-row gap-10 items-center mb-12">
@@ -79,10 +79,10 @@ export default function About() {
             transition={{ delay: 0.2 }}
           >
             <p className="text-lg leading-relaxed font-medium">
-              גל הוא בונה לגו נלהב עם תשוקה לפרטים קטנים ולדיוק.
-              הוא בונה דגמים מורכבים מגיל צעיר, ומחפש תמיד את
-              האתגר הבא — בין אם זה מנוע V8 מלגו טכניק או
-              ערים שלמות עם אורות LED.
+              התחלתי להרכיב לגו בגיל 10-11. קנו לי מכונית לגו והתחלתי לאהוב את זה משם.
+              מה שגרם לי לאהוב את התחביב הוא שזו עבודה מתאימה לכל גיל.
+              יש לו הרבה יתרונות שעוזרים לי כמו: מוטוריקה עדינה, ריכוז, דיוק, סבלנות,
+              עבודה מול תוכנית — וכל מבנה מרשים בפני עצמו.
             </p>
           </motion.div>
         </div>
