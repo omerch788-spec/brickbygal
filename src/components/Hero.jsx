@@ -132,30 +132,22 @@ export default function Hero() {
 
         {/* ── Text block (right side on desktop) ── */}
         <div className="flex-1 text-center md:text-right">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-[#FFD700] font-bold tracking-widest uppercase text-sm mb-5"
-          >
-            LEGO Portfolio
-          </motion.p>
-
           <motion.h1
             initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-5xl md:text-6xl font-black leading-tight mb-6 text-white"
             style={{ fontFamily: 'Nunito' }}
           >
-            הלגו שלי, העולם שלי.{' '}
-            <span className="text-[#FFD700]">כל דגם מספר סיפור.</span>
+            הלגו שלי, העולם שלי.
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-xl text-gray-400 mb-10"
+            className="text-xl mb-10"
+            style={{ color: '#888888' }}
           >
-            גל בונה עולמות מלגו. כל דגם — פרויקט, סיפור, ויצירה.
+            ברוכים הבאים לעולם שלי, בו כל דגם מספר סיפור
           </motion.p>
 
           <motion.div
