@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion'
 
 const CATEGORY_COLORS = {
-  'סיטי':         { bg: '#006DB7', text: '#fff' },
-  'טכניק':        { bg: '#E3000B', text: '#fff' },
-  'ארכיטקטורה':  { bg: '#1A1A1A', text: '#FFD700' },
-  'שער כוכבים':  { bg: '#00A850', text: '#fff' },
+  'Ideas':   { bg: '#006DB7', text: '#fff' },
+  'Icons':   { bg: '#E3000B', text: '#fff' },
+  'Technic': { bg: '#FFD700', text: '#1A1A1A' },
 }
 
 const BrickIcon = ({ filled }) => (

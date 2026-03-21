@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 
 const stats = [
-  { icon: '🧱', value: 2, suffix: '+', label: 'דגמים' },
-  { icon: '⏱', value: 100, suffix: '+', label: 'שעות בנייה' },
-  { icon: '🔩', value: 6000, suffix: '+', label: 'חלקים' },
+  { icon: '🧱', value: 8, suffix: '+', label: 'דגמים' },
+  { icon: '🔩', value: 19000, suffix: '+', label: 'חלקים' },
+  { icon: '📅', value: 10, suffix: '+', label: 'שנות ניסיון' },
 ]
 
 function CountUp({ target, suffix }) {
