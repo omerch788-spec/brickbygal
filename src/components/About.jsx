@@ -48,7 +48,7 @@ export default function About() {
           className="text-4xl font-black text-center mb-12"
           style={{ fontFamily: 'Nunito' }}
         >
-          מי זה גל צ'אושו?
+          מי אני?
         </motion.h2>
 
         <div className="flex flex-col md:flex-row gap-10 items-center mb-12">
@@ -59,16 +59,11 @@ export default function About() {
             viewport={{ once: true }}
             className="flex-shrink-0"
           >
-            <div
-              className="w-48 h-48 rounded-full border-4 border-[#1A1A1A] overflow-hidden"
-              style={{ boxShadow: '6px 6px 0 #1A1A1A' }}
-            >
-              <img
-                src="https://placehold.co/192x192/1A1A1A/FFD700?text=גל"
-                alt="גל"
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <img
+              src="/brickbygal/gal.jpg"
+              alt="גל"
+              style={{ width: 250, height: 250, borderRadius: '50%', objectFit: 'cover', border: '5px solid #FFD700', boxShadow: '6px 6px 0 #1A1A1A' }}
+            />
           </motion.div>
 
           {/* Text */}
