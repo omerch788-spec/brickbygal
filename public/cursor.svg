@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <!-- Studs -->
+  <circle cx="7" cy="9" r="3.5" fill="#FFD700" stroke="#1A1A1A" stroke-width="1.5"/>
+  <circle cx="17" cy="9" r="3.5" fill="#FFD700" stroke="#1A1A1A" stroke-width="1.5"/>
+  <!-- Brick body -->
+  <rect x="1" y="10" width="22" height="13" rx="2" fill="#FFD700" stroke="#1A1A1A" stroke-width="1.5"/>
+</svg>

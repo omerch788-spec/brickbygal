@@ -10,7 +10,14 @@
   --lego-light:  #F5F5F0;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+  cursor: url('/brickbygal/cursor.svg') 0 0, auto;
+}
+
+button, a, [role="button"] {
+  cursor: url('/brickbygal/cursor-pointer.svg') 0 0, pointer;
+}
 
 body {
   font-family: 'Rubik', sans-serif;
