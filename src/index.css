@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --lego-red:    #E3000B;
+  --lego-yellow: #FFD700;
+  --lego-blue:   #006DB7;
+  --lego-green:  #00A850;
+  --lego-black:  #1A1A1A;
+  --lego-white:  #FFFFFF;
+  --lego-light:  #F5F5F0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--lego-white);
+  color: var(--lego-black);
+  margin: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Nunito', sans-serif;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.brutalist {
+  border: 3px solid #1A1A1A;
+  box-shadow: 4px 4px 0px #1A1A1A;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.brutalist:hover {
+  box-shadow: 6px 6px 0px #1A1A1A;
+  transform: translate(-2px, -2px);
+}
+
+@keyframes floatBrick {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-22px) rotate(6deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes bounceArrow {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(10px); }
+}
+
+@keyframes confettiFall {
+  0%   { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+.confetti-piece {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  top: -20px;
+  animation: confettiFall 2.5s ease-in forwards;
+  z-index: 9999;
+  pointer-events: none;
+  border-radius: 2px;
+}
