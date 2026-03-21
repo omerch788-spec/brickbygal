@@ -71,6 +71,8 @@ brickbygal/
 
 ## Deployment
 
-- **Production:** https://brickbygal.netlify.app
-- Auto-deploys on push to `main`
-- `netlify.toml`: `command = "npm run build"`, `publish = "dist"`
+- **Production (GitHub Pages):** https://omerch788-spec.github.io/brickbygal/
+- GitHub repo: https://github.com/omerch788-spec/brickbygal (public)
+- To redeploy: `npm run build` → `rm -rf docs && cp -r dist docs` → commit & push
+- GitHub Pages serves from the `docs/` folder on the `main` branch
+- **Netlify:** https://brickbygal.netlify.app (site created, blocked until credits reset ~2026-04-14)
