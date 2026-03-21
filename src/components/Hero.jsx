@@ -86,19 +86,16 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.1, delay: 0.25 }}
           className="flex-shrink-0 flex justify-center order-1 md:order-2"
-          style={{ perspective: '800px' }}
         >
           <img
             src="/brickbygal/globe.jpg"
             alt="LEGO Globe"
-            style={{
-              width: 350,
-              height: 350,
-              objectFit: 'contain',
-              animation: 'spinGlobe 20s linear infinite',
-              filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))',
-            }}
             className="w-[220px] h-[220px] md:w-[350px] md:h-[350px]"
+            style={{
+              objectFit: 'contain',
+              animation: 'spinGlobe 25s linear infinite',
+              filter: 'drop-shadow(0 20px 60px rgba(37,99,235,0.3))',
+            }}
           />
         </motion.div>
 
