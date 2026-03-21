@@ -28,7 +28,8 @@ export default function ModelModal({ model, onClose }) {
         >
           {/* Image */}
           <div className="relative">
-            <img src={model.image} alt={model.name} className="w-full h-52 object-cover" />
+            <img src={model.image} alt={model.name}
+              style={{ width: '100%', maxHeight: 350, objectFit: 'contain', background: '#1E3A5F' }} />
             <button
               onClick={onClose}
               className="absolute top-3 left-3 rounded-full w-9 h-9 flex items-center justify-center font-bold text-xl transition-colors text-white"

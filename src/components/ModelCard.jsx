@@ -28,7 +28,9 @@ export default function ModelCard({ model, index, onOpen }) {
       onClick={() => onOpen(model)}
     >
       <div className="relative">
-        <img src={model.image} alt={model.name} className="w-full h-48 object-cover" />
+        <img src={model.image} alt={model.name}
+          className="w-full"
+          style={{ height: 220, objectFit: 'contain', background: '#1E3A5F' }} />
         <span
           className="absolute top-3 right-3 text-xs font-bold px-3 py-1 rounded-full"
           style={{
