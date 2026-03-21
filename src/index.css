@@ -13,14 +13,14 @@
 * { box-sizing: border-box; }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background: var(--lego-white);
-  color: var(--lego-black);
+  font-family: 'Rubik', sans-serif;
+  background: #0F1C2E;
+  color: #FFFFFF;
   margin: 0;
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Righteous', cursive;
 }
 
 #root {
