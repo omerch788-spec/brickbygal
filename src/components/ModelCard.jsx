@@ -1,5 +1,12 @@
 import { motion } from 'framer-motion'
 
+const CATEGORY_BADGE = {
+  'Ideas':        { bg: 'rgba(96,165,250,0.15)', color: '#60A5FA' },
+  'Icons':        { bg: 'rgba(96,165,250,0.15)', color: '#60A5FA' },
+  'Technic':      { bg: 'rgba(96,165,250,0.15)', color: '#60A5FA' },
+  'Harry Potter': { bg: 'rgba(168,85,247,0.15)', color: '#C084FC' },
+}
+
 const BrickIcon = ({ filled }) => (
   <span style={{ color: filled ? '#60A5FA' : 'rgba(96,165,250,0.2)', fontSize: '14px' }}>🧱</span>
 )
@@ -25,9 +32,9 @@ export default function ModelCard({ model, index, onOpen }) {
         <span
           className="absolute top-3 right-3 text-xs font-bold px-3 py-1 rounded-full"
           style={{
-            background: 'rgba(96,165,250,0.15)',
-            color: '#60A5FA',
-            border: '1px solid rgba(96,165,250,0.3)',
+            background: (CATEGORY_BADGE[model.category] || CATEGORY_BADGE['Ideas']).bg,
+            color: (CATEGORY_BADGE[model.category] || CATEGORY_BADGE['Ideas']).color,
+            border: `1px solid ${(CATEGORY_BADGE[model.category] || CATEGORY_BADGE['Ideas']).color}44`,
             fontFamily: 'Rubik, sans-serif',
           }}
         >

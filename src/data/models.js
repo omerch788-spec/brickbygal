@@ -22,7 +22,7 @@ export const models = [
     year: 2023,
     description: "מכונת ארקייד קלאסית של Pac-Man עם 2,651 חלקים. כוללת ג'ויסטיק אמיתי, מטבעה מוארת, מנגנון מבוך מכאני שזזים כשמסובבים ידית, ופיגורות של Pac-Man, Blinky ו-Clyde.",
     funFact: "מסובבים את הידית מאחור — ורואים את Pac-Man רודף אחרי הרוחות בתוך המבוך!",
-    image: "/brickbygal/pacman.jpg",
+    image: "/brickbygal/pacman2.jpg",
     setNumber: "10323"
   },
   {
@@ -102,5 +102,44 @@ export const models = [
     funFact: "הדגם גבוה יותר ממטר! ניתן להפריד את שלבי הטיל בדיוק כמו בשיגור אמיתי.",
     image: "/brickbygal/nasa.jpg",
     setNumber: "10341"
+  },
+  {
+    id: 9,
+    name: "הארי פוטר - אייקוני הוגוורטס",
+    category: "Harry Potter",
+    pieces: 3010,
+    difficulty: 5,
+    buildTime: "זמן לא ידוע",
+    year: 2021,
+    description: "דגם אוסף מרהיב עם הדג' ויג ינשוף השלג, ספרי הוגוורטס, שרביט קסמים, כדור הזהב, יומן טום רידל ועוד. כולל 3 מיניפיגים מוזהבים לציון 20 שנה ללגו הארי פוטר.",
+    funFact: "הדגם חוגג 20 שנה ללגו הארי פוטר — וכולל 3 מיניפיגים מוזהבים בלעדיים!",
+    image: "/brickbygal/harrypoter.png",
+    setNumber: "76391"
+  },
+  {
+    id: 10,
+    name: "כפר ריביירה האיטלקי",
+    category: "Ideas",
+    pieces: 3251,
+    difficulty: 4,
+    buildTime: "זמן לא ידוע",
+    year: 2025,
+    description: "שחזור מרהיב של כפר דייגים איטלקי בסגנון צ'ינקווה טרה. שלושה בניינים צבעוניים עם חנות גלידה, שוק דגים וחנות ציוד צלילה, 10 מיניפיגים וסירה.",
+    funFact: "הדגם כולל נונה איטלקייה שמלמדת את נכדה להכין פסטה טריפה מסורתית!",
+    image: "/brickbygal/italia.png",
+    setNumber: "21359"
+  },
+  {
+    id: 11,
+    name: "גביע העולם FIFA",
+    category: "Icons",
+    pieces: 2842,
+    difficulty: 4,
+    buildTime: "זמן לא ידוע",
+    year: 2026,
+    description: "עותק רשמי 1:1 של גביע העולם FIFA עם 2,842 חלקים. הדגם הראשון בשיתוף פעולה בין לגו ל-FIFA. כולל יותר חלקים בצבע זהב מכל דגם לגו אחר.",
+    funFact: "הגלובוס בראש הגביע נפתח ומגלה מיניפיג' בלעדי שמחזיק גביע מיני!",
+    image: "/brickbygal/worldcup.png",
+    setNumber: "43020"
   }
 ]
