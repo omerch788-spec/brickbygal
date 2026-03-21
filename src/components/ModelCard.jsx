@@ -35,7 +35,7 @@ export default function ModelCard({ model, index, onOpen }) {
         </span>
       </div>
 
-      <div className="p-4">
+      <div className="p-5">
         <h3 className="font-black text-lg mb-2" style={{ fontFamily: 'Nunito' }}>{model.name}</h3>
 
         <div className="flex justify-between text-sm text-gray-500 mb-3">

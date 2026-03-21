@@ -115,7 +115,7 @@ export default function BuildChallenge() {
   }
 
   return (
-    <section id="challenge" className="py-20 px-4 bg-[#1A1A1A] text-white">
+    <section id="challenge" className="py-24 px-4 bg-[#1A1A1A] text-white">
       {showConfetti && <Confetti />}
       <div className="max-w-4xl mx-auto">
         <motion.h2
@@ -125,7 +125,7 @@ export default function BuildChallenge() {
           className="text-4xl font-black text-center mb-3"
           style={{ fontFamily: 'Nunito' }}
         >
-          🎮 אתגר הלגו
+          אתגר הלגו
         </motion.h2>
         <p className="text-center text-gray-400 mb-12">צבע לבנה, ובנה את הצורה שלך!</p>
 

@@ -34,19 +34,19 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact" className="py-20 px-4 bg-[#F5F5F0]">
+    <section id="contact" className="py-24 px-4 bg-[#1A1A1A]">
       {showConfetti && <Confetti />}
       <div className="max-w-xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl font-black text-center mb-3"
+          className="text-4xl font-black text-center mb-3 text-white"
           style={{ fontFamily: 'Nunito' }}
         >
-          📩 יש לך שאלה?
+          יש לך שאלה?
         </motion.h2>
-        <p className="text-center text-gray-500 mb-10">גל שמח לשמוע! כתוב/י לו ישירות.</p>
+        <p className="text-center text-gray-400 mb-10">גל שמח לשמוע! כתוב/י לו ישירות.</p>
 
         <AnimatePresence mode="wait">
           {submitted ? (
@@ -57,8 +57,8 @@ export default function ContactForm() {
               className="text-center py-12"
             >
               <div className="text-6xl mb-4">✅</div>
-              <h3 className="text-2xl font-black mb-2" style={{ fontFamily: 'Nunito' }}>ההודעה נשלחה!</h3>
-              <p className="text-gray-600">גל יחזור אליך בהקדם 🧱</p>
+              <h3 className="text-2xl font-black mb-2 text-white" style={{ fontFamily: 'Nunito' }}>ההודעה נשלחה!</h3>
+              <p className="text-gray-400">גל יחזור אליך בהקדם</p>
             </motion.div>
           ) : (
             <motion.form

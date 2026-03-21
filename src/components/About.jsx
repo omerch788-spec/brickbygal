@@ -39,7 +39,7 @@ function CountUp({ target, suffix }) {
 
 export default function About() {
   return (
-    <section id="about" className="py-20 px-4 bg-[#FFD700]">
+    <section id="about" className="py-24 px-4 bg-white">
       <div className="max-w-5xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -96,7 +96,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white rounded-2xl p-5 text-center"
+              className="bg-[#F5F5F0] rounded-2xl p-5 text-center"
               style={{ border: '3px solid #1A1A1A', boxShadow: '4px 4px 0 #1A1A1A' }}
             >
               <div className="text-3xl mb-1">{s.icon}</div>
