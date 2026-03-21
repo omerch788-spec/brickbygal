@@ -1,10 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
+import { models } from '../data/models'
+
+const totalModels = models.length
+const totalPieces = models.reduce((sum, m) => sum + m.pieces, 0)
 
 const stats = [
-  { icon: '🧱', value: 8, suffix: '+', label: 'דגמים' },
-  { icon: '🔩', value: 19000, suffix: '+', label: 'חלקים' },
-  { icon: '📅', value: 10, suffix: '+', label: 'שנות ניסיון' },
+  { icon: '🧱', value: totalModels, suffix: '+', label: 'דגמים' },
+  { icon: '🔩', value: totalPieces, suffix: '+', label: 'חלקים' },
+  { icon: '📅', value: 10,          suffix: '+', label: 'שנות ניסיון' },
 ]
 
 function CountUp({ target, suffix }) {

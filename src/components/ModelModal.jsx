@@ -1,11 +1,49 @@
 import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useRef, useCallback } from 'react'
 
 const BrickIcon = ({ filled }) => (
   <span style={{ color: filled ? '#60A5FA' : 'rgba(96,165,250,0.2)' }}>🧱</span>
 )
 
+const ZOOM_STEP = 0.25
+const ZOOM_MIN = 0.5
+const ZOOM_MAX = 3
+
 export default function ModelModal({ model, onClose }) {
+  const [zoom, setZoom] = useState(1)
+  const [pan, setPan] = useState({ x: 0, y: 0 })
+  const dragging = useRef(false)
+  const dragStart = useRef({ x: 0, y: 0 })
+  const panStart = useRef({ x: 0, y: 0 })
+
   if (!model) return null
+
+  const clampZoom = (z) => Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, z))
+
+  const zoomIn  = () => { setZoom(z => clampZoom(z + ZOOM_STEP)); if (zoom <= 1) setPan({ x: 0, y: 0 }) }
+  const zoomOut = () => { setZoom(z => clampZoom(z - ZOOM_STEP)); if (zoom - ZOOM_STEP <= 1) setPan({ x: 0, y: 0 }) }
+  const reset   = () => { setZoom(1); setPan({ x: 0, y: 0 }) }
+
+  const onWheel = (e) => {
+    e.preventDefault()
+    setZoom(z => clampZoom(z + (e.deltaY < 0 ? ZOOM_STEP : -ZOOM_STEP)))
+  }
+
+  const onMouseDown = (e) => {
+    if (zoom <= 1) return
+    dragging.current = true
+    dragStart.current = { x: e.clientX, y: e.clientY }
+    panStart.current = { ...pan }
+    e.preventDefault()
+  }
+  const onMouseMove = useCallback((e) => {
+    if (!dragging.current) return
+    setPan({
+      x: panStart.current.x + (e.clientX - dragStart.current.x),
+      y: panStart.current.y + (e.clientY - dragStart.current.y),
+    })
+  }, [])
+  const onMouseUp = () => { dragging.current = false }
 
   return (
     <AnimatePresence>
@@ -28,8 +66,36 @@ export default function ModelModal({ model, onClose }) {
         >
           {/* Image */}
           <div className="relative">
-            <img src={model.image} alt={model.name}
-              style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'contain', background: '#1E3A5F' }} />
+            <div
+              style={{
+                overflow: 'hidden',
+                background: '#1E3A5F',
+                cursor: zoom > 1 ? 'grab' : 'default',
+                userSelect: 'none',
+              }}
+              onWheel={onWheel}
+              onMouseDown={onMouseDown}
+              onMouseMove={onMouseMove}
+              onMouseUp={onMouseUp}
+              onMouseLeave={onMouseUp}
+            >
+              <img
+                src={model.image}
+                alt={model.name}
+                draggable={false}
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  height: 'auto',
+                  objectFit: 'contain',
+                  background: '#1E3A5F',
+                  transform: `scale(${zoom}) translate(${pan.x / zoom}px, ${pan.y / zoom}px)`,
+                  transition: dragging.current ? 'none' : 'transform 0.2s ease',
+                  transformOrigin: 'center center',
+                }}
+              />
+            </div>
+
             <button
               onClick={onClose}
               className="absolute top-3 left-3 rounded-full w-9 h-9 flex items-center justify-center font-bold text-xl transition-colors text-white"
@@ -45,6 +111,78 @@ export default function ModelModal({ model, onClose }) {
             >
               {model.category}
             </span>
+          </div>
+
+          {/* Zoom controls */}
+          <div className="flex items-center justify-center gap-2 py-3 px-4" style={{ borderBottom: '1px solid rgba(96,165,250,0.1)' }}>
+            <button
+              onClick={zoomOut}
+              disabled={zoom <= ZOOM_MIN}
+              style={{
+                background: zoom <= ZOOM_MIN ? 'rgba(37,99,235,0.3)' : '#2563EB',
+                color: '#fff',
+                border: 'none',
+                borderRadius: '50%',
+                width: 34,
+                height: 34,
+                fontSize: 16,
+                cursor: zoom <= ZOOM_MIN ? 'default' : 'pointer',
+                transition: 'background 0.15s',
+              }}
+            >🔍-</button>
+
+            <span
+              onClick={reset}
+              style={{
+                color: '#60A5FA',
+                fontFamily: 'Rubik, sans-serif',
+                fontWeight: 700,
+                fontSize: 14,
+                minWidth: 46,
+                textAlign: 'center',
+                cursor: 'pointer',
+                padding: '4px 8px',
+                borderRadius: 8,
+                background: 'rgba(96,165,250,0.08)',
+                border: '1px solid rgba(96,165,250,0.2)',
+              }}
+              title="Reset zoom"
+            >
+              {Math.round(zoom * 100)}%
+            </span>
+
+            <button
+              onClick={zoomIn}
+              disabled={zoom >= ZOOM_MAX}
+              style={{
+                background: zoom >= ZOOM_MAX ? 'rgba(37,99,235,0.3)' : '#2563EB',
+                color: '#fff',
+                border: 'none',
+                borderRadius: '50%',
+                width: 34,
+                height: 34,
+                fontSize: 16,
+                cursor: zoom >= ZOOM_MAX ? 'default' : 'pointer',
+                transition: 'background 0.15s',
+              }}
+            >🔍+</button>
+
+            <button
+              onClick={reset}
+              style={{
+                background: '#2563EB',
+                color: '#fff',
+                border: 'none',
+                borderRadius: '50%',
+                width: 34,
+                height: 34,
+                fontSize: 16,
+                cursor: 'pointer',
+                transition: 'background 0.15s',
+                marginRight: 4,
+              }}
+              title="Reset"
+            >↺</button>
           </div>
 
           <div className="p-6">
