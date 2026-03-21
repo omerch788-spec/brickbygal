@@ -13,6 +13,7 @@ const BrickLogo = () => (
 const links = [
   { href: '#gallery', label: 'גלריה' },
   { href: '#about', label: 'אודות' },
+  { href: '#builder', label: 'מיניפיג\'' },
   { href: '#contact', label: 'צור קשר' },
 ]
 
