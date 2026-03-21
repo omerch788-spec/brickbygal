@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { motion, AnimatePresence } from 'framer-motion'
 
 function Confetti() {
-  const colors = ['#E3000B', '#FFD700', '#006DB7', '#00A850', '#FF6B00']
+  const colors = ['#2563EB', '#60A5FA', '#1E3A5F', '#93C5FD', '#3B82F6']
   return (
     <>
       {Array.from({ length: 20 }, (_, i) => (
@@ -34,7 +34,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact" className="py-24 px-4 bg-[#1A1A1A]">
+    <section id="contact" className="py-24 px-4" style={{ background: '#0F1C2E' }}>
       {showConfetti && <Confetti />}
       <div className="max-w-xl mx-auto">
         <motion.h2
@@ -42,11 +42,11 @@ export default function ContactForm() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-4xl font-black text-center mb-3 text-white"
-          style={{ fontFamily: 'Nunito' }}
+          style={{ fontFamily: 'Righteous, cursive' }}
         >
           יש לך שאלה?
         </motion.h2>
-        <p className="text-center text-gray-400 mb-10">גל שמח לשמוע! כתוב/י לו ישירות.</p>
+        <p className="text-center mb-10" style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}>גל שמח לשמוע! כתוב/י לו ישירות.</p>
 
         <AnimatePresence mode="wait">
           {submitted ? (
@@ -57,8 +57,8 @@ export default function ContactForm() {
               className="text-center py-12"
             >
               <div className="text-6xl mb-4">✅</div>
-              <h3 className="text-2xl font-black mb-2 text-white" style={{ fontFamily: 'Nunito' }}>ההודעה נשלחה!</h3>
-              <p className="text-gray-400">גל יחזור אליך בהקדם</p>
+              <h3 className="text-2xl font-black mb-2 text-white" style={{ fontFamily: 'Righteous, cursive' }}>ההודעה נשלחה!</h3>
+              <p style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}>גל יחזור אליך בהקדם</p>
             </motion.div>
           ) : (
             <motion.form
@@ -66,42 +66,45 @@ export default function ContactForm() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               onSubmit={handleSubmit(onSubmit)}
-              className="bg-white rounded-2xl p-8"
-              style={{ border: '3px solid #1A1A1A', boxShadow: '6px 6px 0 #1A1A1A' }}
+              className="rounded-2xl p-8"
+              style={{ background: '#1E3A5F', border: '1px solid rgba(96,165,250,0.2)' }}
               noValidate
             >
               {/* Name */}
               <div className="mb-5">
-                <label className="block font-bold mb-1">שם מלא</label>
+                <label className="block font-bold mb-1 text-white" style={{ fontFamily: 'Rubik, sans-serif' }}>שם מלא</label>
                 <input
                   {...register('name', { required: 'שדה חובה' })}
-                  className="w-full border-2 border-[#1A1A1A] rounded-xl px-4 py-3 focus:outline-none focus:border-[#006DB7]"
+                  className="w-full rounded-xl px-4 py-3 focus:outline-none text-white"
+                  style={{ background: '#0F1C2E', border: '1px solid rgba(96,165,250,0.2)', fontFamily: 'Rubik, sans-serif' }}
                   placeholder="הכנס/י שם..."
                 />
-                {errors.name && <p className="text-[#E3000B] text-sm mt-1">{errors.name.message}</p>}
+                {errors.name && <p className="text-sm mt-1" style={{ color: '#F87171' }}>{errors.name.message}</p>}
               </div>
 
               {/* Email */}
               <div className="mb-5">
-                <label className="block font-bold mb-1">אימייל</label>
+                <label className="block font-bold mb-1 text-white" style={{ fontFamily: 'Rubik, sans-serif' }}>אימייל</label>
                 <input
                   type="email"
                   {...register('email', {
                     required: 'שדה חובה',
                     pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'אימייל לא תקין' }
                   })}
-                  className="w-full border-2 border-[#1A1A1A] rounded-xl px-4 py-3 focus:outline-none focus:border-[#006DB7]"
+                  className="w-full rounded-xl px-4 py-3 focus:outline-none text-white"
+                  style={{ background: '#0F1C2E', border: '1px solid rgba(96,165,250,0.2)', fontFamily: 'Rubik, sans-serif' }}
                   placeholder="your@email.com"
                 />
-                {errors.email && <p className="text-[#E3000B] text-sm mt-1">{errors.email.message}</p>}
+                {errors.email && <p className="text-sm mt-1" style={{ color: '#F87171' }}>{errors.email.message}</p>}
               </div>
 
               {/* Subject */}
               <div className="mb-5">
-                <label className="block font-bold mb-1">נושא</label>
+                <label className="block font-bold mb-1 text-white" style={{ fontFamily: 'Rubik, sans-serif' }}>נושא</label>
                 <select
                   {...register('subject')}
-                  className="w-full border-2 border-[#1A1A1A] rounded-xl px-4 py-3 focus:outline-none focus:border-[#006DB7] bg-white"
+                  className="w-full rounded-xl px-4 py-3 focus:outline-none text-white"
+                  style={{ background: '#0F1C2E', border: '1px solid rgba(96,165,250,0.2)', fontFamily: 'Rubik, sans-serif' }}
                 >
                   <option value="מחמאה">מחמאה</option>
                   <option value="שיתוף פעולה">שיתוף פעולה</option>
@@ -112,22 +115,26 @@ export default function ContactForm() {
 
               {/* Message */}
               <div className="mb-6">
-                <label className="block font-bold mb-1">הודעה</label>
+                <label className="block font-bold mb-1 text-white" style={{ fontFamily: 'Rubik, sans-serif' }}>הודעה</label>
                 <textarea
                   {...register('message', {
                     required: 'שדה חובה',
                     minLength: { value: 10, message: 'לפחות 10 תווים' }
                   })}
                   rows={4}
-                  className="w-full border-2 border-[#1A1A1A] rounded-xl px-4 py-3 focus:outline-none focus:border-[#006DB7] resize-none"
+                  className="w-full rounded-xl px-4 py-3 focus:outline-none resize-none text-white"
+                  style={{ background: '#0F1C2E', border: '1px solid rgba(96,165,250,0.2)', fontFamily: 'Rubik, sans-serif' }}
                   placeholder="כתוב/י כאן..."
                 />
-                {errors.message && <p className="text-[#E3000B] text-sm mt-1">{errors.message.message}</p>}
+                {errors.message && <p className="text-sm mt-1" style={{ color: '#F87171' }}>{errors.message.message}</p>}
               </div>
 
               <button
                 type="submit"
-                className="brutalist w-full bg-[#E3000B] text-white font-black text-lg py-4 rounded-xl cursor-pointer"
+                className="w-full text-white font-black text-lg py-4 rounded-xl cursor-pointer transition-all duration-150"
+                style={{ background: '#2563EB', fontFamily: 'Righteous, cursive' }}
+                onMouseEnter={e => e.currentTarget.style.background = '#1D4ED8'}
+                onMouseLeave={e => e.currentTarget.style.background = '#2563EB'}
               >
                 שלח הודעה 🚀
               </button>

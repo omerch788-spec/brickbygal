@@ -196,7 +196,7 @@ function MinifigSVG({ face, shirtColor, hat, legColor, accessory }) {
       <text
         x={96} y={151}
         textAnchor="middle" fontSize="17" fontWeight="900"
-        fontFamily="Nunito, Arial, sans-serif"
+        fontFamily="Righteous, Arial, sans-serif"
         fill={galTextColor} letterSpacing="3" opacity={0.95}
       >
         GAL
@@ -263,12 +263,13 @@ function OptionBtn({ label, active, onClick }) {
   return (
     <button
       onClick={onClick}
-      className="px-4 py-2 rounded-xl text-sm font-bold border-2 transition-all duration-150"
+      className="px-4 py-2 rounded-xl text-sm font-bold transition-all duration-150"
       style={{
-        borderColor: active ? '#FFD700' : '#444',
-        background:  active ? '#FFD700' : 'transparent',
-        color:       active ? '#1A1A1A' : '#ccc',
-        boxShadow:   active ? '0 0 12px rgba(255,215,0,0.45)' : 'none',
+        border: `1px solid ${active ? '#2563EB' : 'rgba(96,165,250,0.2)'}`,
+        background: active ? '#2563EB' : 'transparent',
+        color: active ? 'white' : '#94A3B8',
+        boxShadow: active ? '0 0 12px rgba(37,99,235,0.4)' : 'none',
+        fontFamily: 'Rubik, sans-serif',
       }}
     >
       {label}
@@ -280,15 +281,15 @@ function ColorBtn({ color, active, onClick }) {
   return (
     <button onClick={onClick} title={color.name} className="flex flex-col items-center gap-1">
       <div
-        className="w-10 h-10 rounded-lg border-2 transition-all duration-150"
+        className="w-10 h-10 rounded-lg transition-all duration-150"
         style={{
           background:  color.hex,
-          borderColor: active ? '#FFD700' : '#444',
-          boxShadow:   active ? '0 0 12px rgba(255,215,0,0.55)' : 'none',
+          border: `2px solid ${active ? '#60A5FA' : 'rgba(96,165,250,0.2)'}`,
+          boxShadow: active ? '0 0 12px rgba(96,165,250,0.5)' : 'none',
           transform:   active ? 'scale(1.18)' : 'scale(1)',
         }}
       />
-      <span className="text-xs text-gray-400">{color.name}</span>
+      <span className="text-xs" style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}>{color.name}</span>
     </button>
   )
 }
@@ -324,7 +325,7 @@ export default function MinifigBuilder() {
   }, [face, shirtColor, hat, legColor, accessory])
 
   return (
-    <section id="builder" className="py-24 px-4 bg-[#1A1A1A] text-white">
+    <section id="builder" className="py-24 px-4 text-white" style={{ background: '#0F1C2E' }}>
       <div className="max-w-5xl mx-auto">
 
         <motion.h2
@@ -332,12 +333,12 @@ export default function MinifigBuilder() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-4xl font-black text-center mb-3"
-          style={{ fontFamily: 'Nunito' }}
+          style={{ fontFamily: 'Righteous, cursive' }}
         >
           הלבש את גל
         </motion.h2>
-        <p className="text-center text-gray-400 mb-12">
-          עצב את המיניפיג' — <span className="text-[#FFD700] font-bold">{TOTAL.toLocaleString()}</span> צירופים אפשריים
+        <p className="text-center mb-12" style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}>
+          עצב את המיניפיג' — <span className="font-bold" style={{ color: '#60A5FA' }}>{TOTAL.toLocaleString()}</span> צירופים אפשריים
         </p>
 
         <div className="flex flex-col md:flex-row gap-10 items-start justify-center">
@@ -346,7 +347,7 @@ export default function MinifigBuilder() {
           <div className="flex flex-col items-center flex-shrink-0 mx-auto md:mx-0">
             <div
               className="rounded-2xl p-6 flex items-center justify-center"
-              style={{ background: 'rgba(255,255,255,0.04)', border: '2px solid rgba(255,255,255,0.08)' }}
+              style={{ background: '#1E3A5F', border: '1px solid rgba(96,165,250,0.2)' }}
             >
               <motion.div
                 animate={spinning ? { rotateY: 360 } : { rotateY: 0 }}
@@ -366,13 +367,19 @@ export default function MinifigBuilder() {
             <div className="flex gap-3 mt-5">
               <button
                 onClick={randomize}
-                className="px-5 py-2.5 rounded-xl font-bold border-2 border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-[#1A1A1A] transition-all duration-150"
+                className="px-5 py-2.5 rounded-xl font-bold transition-all duration-150"
+                style={{ border: '1px solid #60A5FA', color: '#60A5FA', background: 'transparent', fontFamily: 'Rubik, sans-serif' }}
+                onMouseEnter={e => { e.currentTarget.style.background = '#2563EB'; e.currentTarget.style.color = 'white'; e.currentTarget.style.borderColor = '#2563EB' }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#60A5FA'; e.currentTarget.style.borderColor = '#60A5FA' }}
               >
                 🎲 אקראי
               </button>
               <button
                 onClick={share}
-                className="px-5 py-2.5 rounded-xl font-bold border-2 border-[#444] text-gray-300 hover:border-[#FFD700] hover:text-[#FFD700] transition-all duration-150"
+                className="px-5 py-2.5 rounded-xl font-bold transition-all duration-150"
+                style={{ border: '1px solid rgba(96,165,250,0.3)', color: '#94A3B8', background: 'transparent', fontFamily: 'Rubik, sans-serif' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = '#60A5FA'; e.currentTarget.style.color = '#60A5FA' }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(96,165,250,0.3)'; e.currentTarget.style.color = '#94A3B8' }}
               >
                 {copied ? '✅ הועתק!' : '📋 שתף'}
               </button>
@@ -384,7 +391,7 @@ export default function MinifigBuilder() {
 
             {/* Face */}
             <div>
-              <p className="font-bold text-[#FFD700] mb-3 text-sm uppercase tracking-wide">😀 פרצוף</p>
+              <p className="font-bold mb-3 text-sm uppercase tracking-wide" style={{ color: '#60A5FA', fontFamily: 'Rubik, sans-serif' }}>😀 פרצוף</p>
               <div className="flex flex-wrap gap-2">
                 {FACES.map(f => <OptionBtn key={f} label={f} active={face === f} onClick={() => setFace(f)} />)}
               </div>
@@ -392,7 +399,7 @@ export default function MinifigBuilder() {
 
             {/* Shirt color */}
             <div>
-              <p className="font-bold text-[#FFD700] mb-3 text-sm uppercase tracking-wide">🎨 צבע חולצה</p>
+              <p className="font-bold mb-3 text-sm uppercase tracking-wide" style={{ color: '#60A5FA', fontFamily: 'Rubik, sans-serif' }}>🎨 צבע חולצה</p>
               <div className="flex flex-wrap gap-3">
                 {COLORS.map(c => <ColorBtn key={c.hex} color={c} active={shirtColor === c.hex} onClick={() => setShirt(c.hex)} />)}
               </div>
@@ -400,7 +407,7 @@ export default function MinifigBuilder() {
 
             {/* Hat */}
             <div>
-              <p className="font-bold text-[#FFD700] mb-3 text-sm uppercase tracking-wide">👒 כיסוי ראש</p>
+              <p className="font-bold mb-3 text-sm uppercase tracking-wide" style={{ color: '#60A5FA', fontFamily: 'Rubik, sans-serif' }}>👒 כיסוי ראש</p>
               <div className="flex flex-wrap gap-2">
                 {HATS.map(h => <OptionBtn key={h} label={h} active={hat === h} onClick={() => setHat(h)} />)}
               </div>
@@ -408,7 +415,7 @@ export default function MinifigBuilder() {
 
             {/* Leg color */}
             <div>
-              <p className="font-bold text-[#FFD700] mb-3 text-sm uppercase tracking-wide">👖 צבע רגליים</p>
+              <p className="font-bold mb-3 text-sm uppercase tracking-wide" style={{ color: '#60A5FA', fontFamily: 'Rubik, sans-serif' }}>👖 צבע רגליים</p>
               <div className="flex flex-wrap gap-3">
                 {COLORS.map(c => <ColorBtn key={c.hex} color={c} active={legColor === c.hex} onClick={() => setLegs(c.hex)} />)}
               </div>
@@ -416,7 +423,7 @@ export default function MinifigBuilder() {
 
             {/* Accessory */}
             <div>
-              <p className="font-bold text-[#FFD700] mb-3 text-sm uppercase tracking-wide">🛠️ אביזר ביד</p>
+              <p className="font-bold mb-3 text-sm uppercase tracking-wide" style={{ color: '#60A5FA', fontFamily: 'Rubik, sans-serif' }}>🛠️ אביזר ביד</p>
               <div className="flex flex-wrap gap-2">
                 {ACCS.map(a => <OptionBtn key={a} label={a} active={accessory === a} onClick={() => setAcc(a)} />)}
               </div>

@@ -22,32 +22,23 @@ const WORLD_MAP = [
   '000000000001111111000000000000000000', // 80S–90S
 ]
 
-const CELL = 19           // px per grid cell
+const CELL = 19
 const COLS = 36
 const ROWS = 18
-const MAP_W = CELL * COLS  // 684px — one full revolution
+const MAP_W = CELL * COLS  // 684px
 const MAP_H = CELL * ROWS  // 342px
-const GLOBE  = 340         // globe diameter
+const GLOBE  = 340
 
-// ─── LEGO Earth globe ────────────────────────────────────────────────────────
 function LegoGlobe() {
-  const topOffset = Math.round((GLOBE - MAP_H) / 2) // centre map vertically
+  const topOffset = Math.round((GLOBE - MAP_H) / 2)
 
   return (
-    // drop-shadow wrapper (outside the clip so shadow shows)
-    <div style={{ filter: 'drop-shadow(0 0 48px rgba(0,109,183,0.55)) drop-shadow(0 0 16px rgba(0,109,183,0.3))' }}>
-      {/* Circular clip + 23° tilt */}
+    <div style={{ filter: 'drop-shadow(0 0 48px rgba(37,99,235,0.6)) drop-shadow(0 0 16px rgba(96,165,250,0.3))' }}>
       <div style={{
-        width: GLOBE,
-        height: GLOBE,
-        borderRadius: '50%',
-        overflow: 'hidden',
-        transform: 'rotate(23deg)',
-        position: 'relative',
-        border: '2px solid rgba(255,255,255,0.08)',
+        width: GLOBE, height: GLOBE, borderRadius: '50%',
+        overflow: 'hidden', transform: 'rotate(23deg)',
+        position: 'relative', border: '2px solid rgba(96,165,250,0.15)',
       }}>
-
-        {/* Scrolling world map — doubled for seamless loop */}
         <div style={{ position: 'absolute', top: topOffset, left: 0 }}>
           <div style={{ animation: 'globeRotate 12s linear infinite', display: 'flex', width: MAP_W * 2 }}>
             <svg width={MAP_W * 2} height={MAP_H} style={{ display: 'block', flexShrink: 0 }}>
@@ -59,18 +50,16 @@ function LegoGlobe() {
                     const y = r * CELL
                     return (
                       <g key={`${copy}-${r}-${c}`}>
-                        {/* Brick face */}
                         <rect
                           x={x + 0.5} y={y + 0.5}
                           width={CELL - 1} height={CELL - 1}
-                          fill={land ? '#00A850' : '#006DB7'}
+                          fill={land ? '#2563EB' : '#1E3A5F'}
                           rx={1.5}
                         />
-                        {/* Stud dot */}
                         <circle
                           cx={x + CELL / 2} cy={y + CELL / 2}
                           r={CELL * 0.21}
-                          fill={land ? '#00C060' : '#0080CC'}
+                          fill={land ? '#60A5FA' : '#1a3460'}
                           opacity={0.5}
                         />
                       </g>
@@ -81,62 +70,51 @@ function LegoGlobe() {
             </svg>
           </div>
         </div>
-
-        {/* 3-D lighting overlay: highlight top-left, shadow bottom-right */}
         <div style={{
           position: 'absolute', inset: 0, borderRadius: '50%', pointerEvents: 'none',
           background:
-            'radial-gradient(circle at 36% 32%, rgba(255,255,255,0.28) 0%, transparent 52%), ' +
-            'radial-gradient(circle at 68% 72%, rgba(0,0,0,0.32) 0%, transparent 46%)',
+            'radial-gradient(circle at 36% 32%, rgba(255,255,255,0.2) 0%, transparent 52%), ' +
+            'radial-gradient(circle at 68% 72%, rgba(0,0,0,0.4) 0%, transparent 46%)',
         }} />
       </div>
     </div>
   )
 }
 
-// ─── Background floating shapes ───────────────────────────────────────────────
 const SHAPES = [
-  { x:  5, y: 10, color: '#E3000B', delay: 0,   w: 56, h: 28, r: -8  },
-  { x: 88, y: 14, color: '#FFD700', delay: 1.4, w: 40, h: 20, r: 12  },
-  { x:  2, y: 42, color: '#FFD700', delay: 0.9, w: 42, h: 21, r:  6  },
-  { x: 90, y: 50, color: '#006DB7', delay: 2.8, w: 60, h: 30, r: -12 },
+  { x:  5, y: 10, color: '#2563EB', delay: 0,   w: 56, h: 28, r: -8  },
+  { x: 88, y: 14, color: '#60A5FA', delay: 1.4, w: 40, h: 20, r: 12  },
+  { x:  2, y: 42, color: '#1E3A5F', delay: 0.9, w: 42, h: 21, r:  6  },
+  { x: 90, y: 50, color: '#2563EB', delay: 2.8, w: 60, h: 30, r: -12 },
 ]
 
-// ─── Hero ─────────────────────────────────────────────────────────────────────
 export default function Hero() {
   const scrollTo = id => document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' })
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#1A1A1A] pt-16">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#0F1C2E] pt-16">
 
-      {/* Floating background shapes */}
       {SHAPES.map((s, i) => (
         <div key={i} className="absolute pointer-events-none" style={{
           left: `${s.x}%`, top: `${s.y}%`,
           width: s.w, height: s.h,
-          background: s.color, borderRadius: 3, opacity: 0.08,
+          background: s.color, borderRadius: 3, opacity: 0.12,
           transform: `rotate(${s.r}deg)`,
           animation: `floatBrick ${4 + s.delay}s ease-in-out infinite`,
           animationDelay: `${s.delay}s`,
         }} />
       ))}
 
-      {/*
-        Layout (RTL-aware flex row):
-          In RTL flex-row the first child sits on the RIGHT, second on the LEFT.
-          JSX order → text first (RIGHT) | globe second (LEFT)
-          On mobile: flex-col → text on top, globe below.
-      */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-20
                       flex flex-col md:flex-row items-center gap-12 md:gap-16">
 
-        {/* ── Text block (right side on desktop) ── */}
+        {/* ── Text block ── */}
         <div className="flex-1 text-center md:text-right">
           <motion.h1
             initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-5xl md:text-6xl font-black leading-tight mb-6 text-white"
-            style={{ fontFamily: 'Nunito' }}
+            style={{ fontFamily: 'Righteous, cursive' }}
           >
             הלגו שלי, העולם שלי.
           </motion.h1>
@@ -145,9 +123,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-xl mb-10"
-            style={{ color: '#888888' }}
+            style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}
           >
-            ברוכים הבאים לעולם שלי, בו כל דגם מספר סיפור
+            ברוכים הבאים לעולמי, בו כל דגם מספר סיפור
           </motion.p>
 
           <motion.div
@@ -157,26 +135,31 @@ export default function Hero() {
           >
             <button
               onClick={() => scrollTo('#gallery')}
-              className="bg-[#FFD700] text-[#1A1A1A] font-black text-lg px-10 py-4 rounded-xl cursor-pointer border-2 border-[#FFD700] hover:bg-transparent hover:text-[#FFD700] transition-all duration-200"
+              className="font-black text-lg px-10 py-4 rounded-xl cursor-pointer transition-all duration-200 text-white"
+              style={{ background: '#2563EB', border: '2px solid #2563EB' }}
+              onMouseEnter={e => e.currentTarget.style.background = '#1D4ED8'}
+              onMouseLeave={e => e.currentTarget.style.background = '#2563EB'}
             >
               צפה בדגמים
             </button>
             <button
               onClick={() => scrollTo('#about')}
-              className="bg-transparent text-white font-black text-lg px-10 py-4 rounded-xl cursor-pointer border-2 border-white hover:bg-white hover:text-[#1A1A1A] transition-all duration-200"
+              className="font-black text-lg px-10 py-4 rounded-xl cursor-pointer transition-all duration-200 text-white"
+              style={{ background: 'transparent', border: '2px solid white' }}
+              onMouseEnter={e => { e.currentTarget.style.background = 'white'; e.currentTarget.style.color = '#0F1C2E' }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'white' }}
             >
               קצת עלי
             </button>
           </motion.div>
         </div>
 
-        {/* ── Globe (left side on desktop) ── */}
+        {/* ── Globe ── */}
         <motion.div
           initial={{ opacity: 0, scale: 0.75 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.1, delay: 0.25 }}
-          className="flex-shrink-0 flex justify-center
-                     scale-[0.62] md:scale-100"
+          className="flex-shrink-0 flex justify-center scale-[0.62] md:scale-100"
           style={{ transformOrigin: 'center center' }}
         >
           <LegoGlobe />
@@ -184,11 +167,10 @@ export default function Hero() {
 
       </div>
 
-      {/* Bounce-down arrow */}
       <button
         onClick={() => scrollTo('#gallery')}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-3xl cursor-pointer text-gray-500"
-        style={{ animation: 'bounceArrow 2s ease-in-out infinite' }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-3xl cursor-pointer"
+        style={{ color: '#94A3B8', animation: 'bounceArrow 2s ease-in-out infinite' }}
         aria-label="גלול למטה"
       >
         ↓

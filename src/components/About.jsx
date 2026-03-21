@@ -39,15 +39,15 @@ function CountUp({ target, suffix }) {
 
 export default function About() {
   return (
-    <section id="about" className="py-24 px-4 bg-white">
+    <section id="about" className="py-24 px-4" style={{ background: '#0F1C2E' }}>
       <div className="max-w-5xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="text-4xl font-black text-center mb-12"
-          style={{ fontFamily: 'Nunito' }}
+          className="text-4xl font-black text-center mb-12 text-white"
+          style={{ fontFamily: 'Righteous, cursive' }}
         >
           מי אני?
         </motion.h2>
@@ -64,7 +64,7 @@ export default function About() {
             <img
               src="/brickbygal/gal.jpg"
               alt="גל"
-              style={{ width: 250, height: 250, borderRadius: '50%', objectFit: 'cover', border: '5px solid #FFD700', boxShadow: '6px 6px 0 #1A1A1A' }}
+              style={{ width: 250, height: 250, borderRadius: '50%', objectFit: 'cover', border: '4px solid #2563EB', boxShadow: '0 0 32px rgba(37,99,235,0.4)' }}
             />
           </motion.div>
 
@@ -75,7 +75,8 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
-              className="text-lg leading-relaxed font-medium"
+              className="text-lg leading-relaxed"
+              style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}
             >
               התחלתי להרכיב לגו בגיל 10-11. קנו לי מכונית לגו והתחלתי לאהוב את זה משם.
             </motion.p>
@@ -84,7 +85,8 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.35 }}
-              className="text-lg leading-relaxed font-medium"
+              className="text-lg leading-relaxed"
+              style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}
             >
               מה שגרם לי לאהוב את התחביב הוא שזו עבודה מתאימה לכל גיל.
               יש לו הרבה יתרונות שעוזרים לי כמו: מוטוריקה עדינה, ריכוז, דיוק, סבלנות,
@@ -102,14 +104,14 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.45 + i * 0.1 }}
-              className="bg-[#F5F5F0] rounded-2xl p-5 text-center"
-              style={{ border: '3px solid #1A1A1A', boxShadow: '4px 4px 0 #1A1A1A' }}
+              className="rounded-2xl p-5 text-center"
+              style={{ background: '#1E3A5F', border: '1px solid rgba(96,165,250,0.2)' }}
             >
               <div className="text-3xl mb-1">{s.icon}</div>
-              <div className="text-2xl font-black" style={{ fontFamily: 'Nunito' }}>
+              <div className="text-2xl font-black text-white" style={{ fontFamily: 'Righteous, cursive' }}>
                 <CountUp target={s.value} suffix={s.suffix} />
               </div>
-              <div className="text-sm text-gray-600 font-medium">{s.label}</div>
+              <div className="text-sm font-medium" style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}>{s.label}</div>
             </motion.div>
           ))}
         </div>
