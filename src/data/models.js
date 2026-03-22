@@ -195,7 +195,12 @@ export const models = [
     year: 2023,
     description: "שחזור מרהיב של בנק גרינגוטס הקוסמים עם 4,803 חלקים. כולל אולם הכניסה המרשים, צינורות הוב, כספות נסתרות ורכבת הגרינגוטס. אחד הסטים הגדולים ביקום הארי פוטר.",
     funFact: "גרינגוטס הוא הסט הגדול ביותר בנושא הארי פוטר — עם כמעט 5,000 חלקים ופרטים מדהימים מהסרט!",
-    image: "/brickbygal/harrypoterbank.webp",
+    image: "/brickbygal/harrypoterbank (4).webp",
+    images: [
+      "/brickbygal/harrypoterbank (4).webp",
+      "/brickbygal/harrypoterbank (3).webp",
+      "/brickbygal/harrypoterbank (2).webp",
+    ],
     setNumber: "76417",
     videos: [
       'https://www.youtube.com/embed/nhZTDyKLveY',

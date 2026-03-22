@@ -59,6 +59,8 @@ export default function ModelModal({ model, onClose }) {
   const [zoom, setZoom] = useState(1)
   const [pan, setPan] = useState({ x: 0, y: 0 })
   const [muted, setMuted] = useState(false)
+  const [activeImg, setActiveImg] = useState(0)
+  const [imgOpacity, setImgOpacity] = useState(1)
   const dragging = useRef(false)
   const dragStart = useRef({ x: 0, y: 0 })
   const panStart = useRef({ x: 0, y: 0 })
@@ -92,6 +94,17 @@ export default function ModelModal({ model, onClose }) {
   const toggleMute = () => {
     if (audioRef.current) audioRef.current.muted = !muted
     setMuted(m => !m)
+  }
+
+  const switchImg = (i) => {
+    if (i === activeImg) return
+    setImgOpacity(0)
+    setTimeout(() => {
+      setActiveImg(i)
+      setZoom(1)
+      setPan({ x: 0, y: 0 })
+      setImgOpacity(1)
+    }, 200)
   }
 
   if (!model) return null
@@ -158,7 +171,7 @@ export default function ModelModal({ model, onClose }) {
               onMouseLeave={onMouseUp}
             >
               <img
-                src={model.image}
+                src={model.images ? model.images[activeImg] : model.image}
                 alt={model.name}
                 loading="lazy"
                 decoding="async"
@@ -172,6 +185,7 @@ export default function ModelModal({ model, onClose }) {
                   transform: `scale(${zoom}) translate(${pan.x / zoom}px, ${pan.y / zoom}px)`,
                   transition: dragging.current ? 'none' : 'transform 0.2s ease',
                   transformOrigin: 'center center',
+                  opacity: imgOpacity,
                 }}
               />
             </div>
@@ -205,6 +219,36 @@ export default function ModelModal({ model, onClose }) {
               {model.category}
             </span>
           </div>
+
+          {/* Thumbnail gallery (only for models with multiple images) */}
+          {model.images && (
+            <div className="flex gap-2 px-3 py-2" style={{ background: '#0F1C2E' }}>
+              {model.images.map((src, i) => (
+                <button
+                  key={i}
+                  onClick={() => switchImg(i)}
+                  style={{
+                    flex: 1,
+                    padding: 0,
+                    border: `2px solid ${activeImg === i ? '#2563EB' : 'rgba(96,165,250,0.15)'}`,
+                    borderRadius: 8,
+                    overflow: 'hidden',
+                    cursor: 'pointer',
+                    transition: 'border-color 0.2s ease',
+                    background: '#1E3A5F',
+                  }}
+                >
+                  <img
+                    src={src}
+                    alt={`תמונה ${i + 1}`}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ width: '100%', height: 64, objectFit: 'cover', display: 'block' }}
+                  />
+                </button>
+              ))}
+            </div>
+          )}
 
           {/* Zoom controls */}
           <div className="flex items-center justify-center gap-2 py-3 px-4" style={{ borderBottom: '1px solid rgba(96,165,250,0.1)' }}>
