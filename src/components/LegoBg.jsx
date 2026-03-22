@@ -7,9 +7,11 @@ const IMAGES = [
   '/brickbygal/brickgreen.png',
 ]
 
-function createBrick(container) {
+function createBrick(container, isMobile) {
   const src   = IMAGES[Math.floor(Math.random() * IMAGES.length)]
-  const scale = 0.5 + Math.random() * 0.9
+  const scale = isMobile
+    ? 0.5 + Math.random() * 0.7          // 0.5–1.2 on mobile
+    : 0.5 + Math.random() * 0.9          // 0.5–1.4 on desktop
 
   const img = document.createElement('img')
   img.src = src
@@ -25,7 +27,7 @@ function createBrick(container) {
   const startX  = Math.random() * 110 - 5
   const duration = 12 + Math.random() * 20
   const delay    = Math.random() * -30
-  const drift    = (Math.random() - 0.5) * 15
+  const drift    = (Math.random() - 0.5) * (isMobile ? 6 : 15)
   const rotStart = Math.random() * 360
   const rotEnd   = rotStart + (Math.random() > 0.5 ? 1 : -1) * (90 + Math.random() * 270)
 
@@ -54,9 +56,12 @@ export default function LegoBg() {
 
   useEffect(() => {
     const container = ref.current
+    const isMobile  = window.innerWidth < 768
+    const count     = isMobile
+      ? 13                                          // fixed 13 on mobile
+      : Math.min(22, Math.floor(window.innerWidth / 60))
     const bricks = []
-    const count = Math.min(22, Math.floor(window.innerWidth / 60))
-    for (let i = 0; i < count; i++) bricks.push(createBrick(container))
+    for (let i = 0; i < count; i++) bricks.push(createBrick(container, isMobile))
     return () => bricks.forEach(b => { b.anim.cancel(); b.el.remove() })
   }, [])
 
