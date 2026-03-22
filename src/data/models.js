@@ -113,7 +113,7 @@ export const models = [
     year: 2021,
     description: "דגם אוסף מרהיב עם הדג' ויג ינשוף השלג, ספרי הוגוורטס, שרביט קסמים, כדור הזהב, יומן טום רידל ועוד. כולל 3 מיניפיגים מוזהבים לציון 20 שנה ללגו הארי פוטר.",
     funFact: "הדגם חוגג 20 שנה ללגו הארי פוטר — וכולל 3 מיניפיגים מוזהבים בלעדיים!",
-    image: "/brickbygal/harrypoter.png",
+    image: "/brickbygal/harrypoter.webp",
     setNumber: "76391"
   },
   {
