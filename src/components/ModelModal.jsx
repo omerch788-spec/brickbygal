@@ -1,6 +1,57 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useRef, useCallback } from 'react'
 
+function VideoTabs({ videos }) {
+  const [active, setActive] = useState(0)
+  const videoRefs = useRef([])
+
+  const switchTo = (i) => {
+    if (videoRefs.current[active]) videoRefs.current[active].pause()
+    setActive(i)
+  }
+
+  return (
+    <div className="mt-5">
+      <div className="flex gap-2 mb-3">
+        {videos.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => switchTo(i)}
+            style={{
+              fontFamily: 'Heebo, sans-serif',
+              fontWeight: 700,
+              padding: '6px 18px',
+              borderRadius: 999,
+              fontSize: 14,
+              cursor: 'pointer',
+              background: active === i ? '#2563EB' : 'transparent',
+              color: active === i ? 'white' : '#94A3B8',
+              border: `1px solid ${active === i ? '#2563EB' : 'rgba(96,165,250,0.2)'}`,
+              transition: 'all 0.2s ease',
+            }}
+          >
+            {`סרטון ${i + 1}`}
+          </button>
+        ))}
+      </div>
+      {videos.map((src, i) => (
+        <video
+          key={i}
+          ref={el => { videoRefs.current[i] = el }}
+          src={src}
+          controls
+          style={{
+            display: active === i ? 'block' : 'none',
+            width: '100%',
+            borderRadius: 12,
+            background: '#0F1C2E',
+          }}
+        />
+      ))}
+    </div>
+  )
+}
+
 const BrickIcon = ({ filled }) => (
   <span style={{ color: filled ? '#60A5FA' : 'rgba(96,165,250,0.2)' }}>🧱</span>
 )
@@ -209,6 +260,9 @@ export default function ModelModal({ model, onClose }) {
               <span className="font-black text-sm" style={{ color: '#60A5FA' }}>💡 עובדה מגניבה: </span>
               <span className="font-semibold text-sm text-white" style={{ fontFamily: 'Heebo, sans-serif' }}>{model.funFact}</span>
             </div>
+
+            {/* Videos (only for models with videos) */}
+            {model.videos && <VideoTabs videos={model.videos} />}
           </div>
         </motion.div>
       </motion.div>
