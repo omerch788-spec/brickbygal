@@ -268,7 +268,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
           className="font-black leading-tight mb-6 text-white"
-          style={{ fontFamily: 'Varela Round, sans-serif', fontSize: 'clamp(2.8rem, 6vw, 4.5rem)' }}
+          style={{ fontFamily: 'Varela Round, sans-serif', fontSize: 'clamp(2rem, 5.5vw, 5rem)', whiteSpace: 'nowrap' }}
         >
           הלגו שלי, העולם שלי.
         </motion.h1>
