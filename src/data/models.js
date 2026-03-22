@@ -165,7 +165,7 @@ export const models = [
     year: 2024,
     description: "מכונת מסטיק וינטאג' עשויה לגו — MOC (My Own Creation) בעיצוב מקורי. בנייה עצמאית בסגנון רטרו-אמריקאי עם חלקים צבעוניים המדמים מסטיקים בפנים המכונה.",
     funFact: "מכונת המסטיק הזו היא יצירה עצמאית ומקורית — לא סט רשמי של לגו אלא MOC ייחודי!",
-    image: "/brickbygal/gummachine.png",
+    image: "/brickbygal/gummachine.webp",
     setNumber: "MOC"
   },
   {
