@@ -88,7 +88,7 @@ export const models = [
     year: 2021,
     description: "מכונת כתיבה וינטאג' בירוק קלאסי עם 2,079 חלקים. כל מקש לוחץ אמיתית ומזיז את מנגנון הטיפוס. ניתן להכניס דף נייר אמיתי לתוכה. מבוסס על מכונת הכתיבה של מייסד לגו!",
     funFact: "ניתן להכניס נייר A5 אמיתי ולהקליד — הדגם מבוסס על מכונת הכתיבה של Ole Kirk Kristiansen!",
-    image: "/brickbygal/typewriter.jpg",
+    image: "/brickbygal/typewriter.webp",
     setNumber: "21327"
   },
   {
