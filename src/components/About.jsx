@@ -109,10 +109,10 @@ export default function About() {
               viewport={{ once: false, amount: 0.15 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.45 + i * 0.1 }}
               className="rounded-2xl p-5 text-center"
-              style={{ background: '#1E3A5F', border: '1px solid rgba(96,165,250,0.2)' }}
+              style={{ background: '#1E3A5F', border: '1px solid rgba(96,165,250,0.2)', overflow: 'hidden', minWidth: 0 }}
             >
               <div className="text-3xl mb-1">{s.icon}</div>
-              <div className="text-2xl font-black text-white" style={{ fontFamily: 'Varela Round, sans-serif' }}>
+              <div className="font-black text-white" style={{ fontFamily: 'Varela Round, sans-serif', fontSize: 'clamp(1.2rem, 4vw, 2.5rem)', wordBreak: 'break-word' }}>
                 <CountUp target={s.value} suffix={s.suffix} />
               </div>
               <div className="text-sm font-medium" style={{ color: '#94A3B8', fontFamily: 'Heebo, sans-serif' }}>{s.label}</div>
