@@ -256,7 +256,7 @@ export default function Hero() {
   const scrollTo = id => document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' })
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#0F1C2E] pt-16">
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-16" style={{ zIndex: 1 }}>
 
       {/* Floating background bricks */}
       {SHAPES.map((s, i) => (

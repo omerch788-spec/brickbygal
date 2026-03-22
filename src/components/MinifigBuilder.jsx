@@ -325,7 +325,7 @@ export default function MinifigBuilder() {
   }, [face, shirtColor, hat, legColor, accessory])
 
   return (
-    <section id="builder" className="py-24 px-4 text-white" style={{ background: '#0F1C2E' }}>
+    <section id="builder" className="py-24 px-4 text-white" style={{ position: 'relative', zIndex: 1 }}>
       <div className="max-w-5xl mx-auto">
 
         <motion.h2

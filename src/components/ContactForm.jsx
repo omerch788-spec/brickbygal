@@ -34,7 +34,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact" className="py-24 px-4" style={{ background: '#0F1C2E' }}>
+    <section id="contact" className="py-24 px-4" style={{ position: 'relative', zIndex: 1 }}>
       {showConfetti && <Confetti />}
       <div className="max-w-xl mx-auto">
         <motion.h2

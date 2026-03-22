@@ -9,7 +9,7 @@ const BrickIcon = ({ color = '#60A5FA' }) => (
 
 export default function Footer() {
   return (
-    <footer className="py-8 px-4 text-white" style={{ background: '#0F1C2E', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+    <footer className="py-8 px-4 text-white" style={{ position: 'relative', zIndex: 1, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Left */}
         <span className="text-sm" style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}>BrickByGal © 2025</span>

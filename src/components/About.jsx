@@ -43,7 +43,7 @@ function CountUp({ target, suffix }) {
 
 export default function About() {
   return (
-    <section id="about" className="py-24 px-4" style={{ background: '#0F1C2E' }}>
+    <section id="about" className="py-24 px-4" style={{ position: 'relative', zIndex: 1 }}>
       <div className="max-w-5xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}

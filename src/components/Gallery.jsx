@@ -13,7 +13,7 @@ export default function Gallery() {
   const filtered = active === 'הכל' ? models : models.filter(m => m.category === active)
 
   return (
-    <section id="gallery" className="py-24 px-4" style={{ background: '#0F1C2E' }}>
+    <section id="gallery" className="py-24 px-4" style={{ position: 'relative', zIndex: 1 }}>
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
