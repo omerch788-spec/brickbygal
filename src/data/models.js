@@ -126,7 +126,7 @@ export const models = [
     year: 2025,
     description: "שחזור מרהיב של כפר דייגים איטלקי בסגנון צ'ינקווה טרה. שלושה בניינים צבעוניים עם חנות גלידה, שוק דגים וחנות ציוד צלילה, 10 מיניפיגים וסירה.",
     funFact: "הדגם כולל נונה איטלקייה שמלמדת את נכדה להכין פסטה טריפה מסורתית!",
-    image: "/brickbygal/italia.png",
+    image: "/brickbygal/italia.webp",
     setNumber: "21359"
   },
   {
@@ -139,7 +139,7 @@ export const models = [
     year: 2026,
     description: "עותק רשמי 1:1 של גביע העולם FIFA עם 2,842 חלקים. הדגם הראשון בשיתוף פעולה בין לגו ל-FIFA. כולל יותר חלקים בצבע זהב מכל דגם לגו אחר.",
     funFact: "הגלובוס בראש הגביע נפתח ומגלה מיניפיג' בלעדי שמחזיק גביע מיני!",
-    image: "/brickbygal/worldcup.png",
+    image: "/brickbygal/worldcup.webp",
     setNumber: "43020"
   },
   {
