@@ -12,7 +12,7 @@ export default function Footer() {
     <footer className="py-8 px-4 text-white" style={{ position: 'relative', zIndex: 1, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Left */}
-        <span className="text-sm" style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}>BrickByGal © 2025</span>
+        <span className="text-sm" style={{ color: '#94A3B8', fontFamily: 'Heebo, sans-serif' }}>BrickByGal © 2025</span>
 
         {/* Center — decorative bricks */}
         <div className="flex gap-2 items-center">
@@ -33,7 +33,7 @@ export default function Footer() {
           >▶️</a>
         </div>
       </div>
-      <p className="text-center text-sm mt-4" style={{ color: '#94A3B8', opacity: 0.5, fontFamily: 'Rubik, sans-serif' }}>נבנה עם ❤️ ולגו</p>
+      <p className="text-center text-sm mt-4" style={{ color: '#94A3B8', opacity: 0.5, fontFamily: 'Heebo, sans-serif' }}>נבנה עם ❤️ ולגו</p>
     </footer>
   )
 }

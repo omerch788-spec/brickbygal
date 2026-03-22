@@ -19,8 +19,8 @@ export default function Gallery() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl font-black text-center mb-3 text-white"
-          style={{ fontFamily: 'Righteous, cursive' }}
+          className="text-4xl font-black text-center mb-2 text-white"
+          style={{ fontFamily: 'Varela Round, sans-serif' }}
         >
           הדגמים של גל
         </motion.h2>
@@ -29,24 +29,41 @@ export default function Gallery() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
-          className="text-center mb-10"
-          style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}
+          className="text-center mb-7"
+          style={{ color: '#94A3B8', fontFamily: 'Heebo, sans-serif', fontSize: '1rem', opacity: 0.8 }}
         >
           לחץ על דגם לפרטים נוספים
         </motion.p>
 
         {/* Filter bar */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        <div className="flex flex-wrap justify-center mb-10" style={{ gap: '12px' }}>
           {CATEGORIES.map(cat => (
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className="font-bold px-5 py-2 rounded-full transition-all"
+              className="font-bold px-5 py-2 rounded-full"
               style={{
-                fontFamily: 'Rubik, sans-serif',
+                fontFamily: 'Heebo, sans-serif',
                 background: active === cat ? '#2563EB' : 'transparent',
                 color: active === cat ? 'white' : '#94A3B8',
                 border: `1px solid ${active === cat ? '#2563EB' : 'rgba(96,165,250,0.2)'}`,
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={e => {
+                if (cat !== active) {
+                  e.currentTarget.style.borderColor = '#2563EB'
+                  e.currentTarget.style.color = '#2563EB'
+                  e.currentTarget.style.transform = 'translateY(-2px)'
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(37,99,235,0.2)'
+                }
+              }}
+              onMouseLeave={e => {
+                if (cat !== active) {
+                  e.currentTarget.style.borderColor = 'rgba(96,165,250,0.2)'
+                  e.currentTarget.style.color = '#94A3B8'
+                  e.currentTarget.style.transform = ''
+                  e.currentTarget.style.boxShadow = ''
+                }
               }}
             >
               {cat}

@@ -269,7 +269,7 @@ function OptionBtn({ label, active, onClick }) {
         background: active ? '#2563EB' : 'transparent',
         color: active ? 'white' : '#94A3B8',
         boxShadow: active ? '0 0 12px rgba(37,99,235,0.4)' : 'none',
-        fontFamily: 'Rubik, sans-serif',
+        fontFamily: 'Heebo, sans-serif',
       }}
     >
       {label}
@@ -289,7 +289,7 @@ function ColorBtn({ color, active, onClick }) {
           transform:   active ? 'scale(1.18)' : 'scale(1)',
         }}
       />
-      <span className="text-xs" style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}>{color.name}</span>
+      <span className="text-xs" style={{ color: '#94A3B8', fontFamily: 'Heebo, sans-serif' }}>{color.name}</span>
     </button>
   )
 }
@@ -333,11 +333,11 @@ export default function MinifigBuilder() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-4xl font-black text-center mb-3"
-          style={{ fontFamily: 'Righteous, cursive' }}
+          style={{ fontFamily: 'Varela Round, sans-serif' }}
         >
           הלבש את גל
         </motion.h2>
-        <p className="text-center mb-12" style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}>
+        <p className="text-center mb-12" style={{ color: '#94A3B8', fontFamily: 'Heebo, sans-serif' }}>
           עצב את המיניפיג' — <span className="font-bold" style={{ color: '#60A5FA' }}>{TOTAL.toLocaleString()}</span> צירופים אפשריים
         </p>
 
@@ -368,7 +368,7 @@ export default function MinifigBuilder() {
               <button
                 onClick={randomize}
                 className="px-5 py-2.5 rounded-xl font-bold transition-all duration-150"
-                style={{ border: '1px solid #60A5FA', color: '#60A5FA', background: 'transparent', fontFamily: 'Rubik, sans-serif' }}
+                style={{ border: '1px solid #60A5FA', color: '#60A5FA', background: 'transparent', fontFamily: 'Heebo, sans-serif' }}
                 onMouseEnter={e => { e.currentTarget.style.background = '#2563EB'; e.currentTarget.style.color = 'white'; e.currentTarget.style.borderColor = '#2563EB' }}
                 onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#60A5FA'; e.currentTarget.style.borderColor = '#60A5FA' }}
               >
@@ -377,7 +377,7 @@ export default function MinifigBuilder() {
               <button
                 onClick={share}
                 className="px-5 py-2.5 rounded-xl font-bold transition-all duration-150"
-                style={{ border: '1px solid rgba(96,165,250,0.3)', color: '#94A3B8', background: 'transparent', fontFamily: 'Rubik, sans-serif' }}
+                style={{ border: '1px solid rgba(96,165,250,0.3)', color: '#94A3B8', background: 'transparent', fontFamily: 'Heebo, sans-serif' }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = '#60A5FA'; e.currentTarget.style.color = '#60A5FA' }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(96,165,250,0.3)'; e.currentTarget.style.color = '#94A3B8' }}
               >
@@ -391,7 +391,7 @@ export default function MinifigBuilder() {
 
             {/* Face */}
             <div>
-              <p className="font-bold mb-3 text-sm uppercase tracking-wide" style={{ color: '#60A5FA', fontFamily: 'Rubik, sans-serif' }}>😀 פרצוף</p>
+              <p className="font-bold mb-3 text-sm uppercase tracking-wide" style={{ color: '#60A5FA', fontFamily: 'Heebo, sans-serif' }}>😀 פרצוף</p>
               <div className="flex flex-wrap gap-2">
                 {FACES.map(f => <OptionBtn key={f} label={f} active={face === f} onClick={() => setFace(f)} />)}
               </div>
@@ -399,7 +399,7 @@ export default function MinifigBuilder() {
 
             {/* Shirt color */}
             <div>
-              <p className="font-bold mb-3 text-sm uppercase tracking-wide" style={{ color: '#60A5FA', fontFamily: 'Rubik, sans-serif' }}>🎨 צבע חולצה</p>
+              <p className="font-bold mb-3 text-sm uppercase tracking-wide" style={{ color: '#60A5FA', fontFamily: 'Heebo, sans-serif' }}>🎨 צבע חולצה</p>
               <div className="flex flex-wrap gap-3">
                 {COLORS.map(c => <ColorBtn key={c.hex} color={c} active={shirtColor === c.hex} onClick={() => setShirt(c.hex)} />)}
               </div>
@@ -407,7 +407,7 @@ export default function MinifigBuilder() {
 
             {/* Hat */}
             <div>
-              <p className="font-bold mb-3 text-sm uppercase tracking-wide" style={{ color: '#60A5FA', fontFamily: 'Rubik, sans-serif' }}>👒 כיסוי ראש</p>
+              <p className="font-bold mb-3 text-sm uppercase tracking-wide" style={{ color: '#60A5FA', fontFamily: 'Heebo, sans-serif' }}>👒 כיסוי ראש</p>
               <div className="flex flex-wrap gap-2">
                 {HATS.map(h => <OptionBtn key={h} label={h} active={hat === h} onClick={() => setHat(h)} />)}
               </div>
@@ -415,7 +415,7 @@ export default function MinifigBuilder() {
 
             {/* Leg color */}
             <div>
-              <p className="font-bold mb-3 text-sm uppercase tracking-wide" style={{ color: '#60A5FA', fontFamily: 'Rubik, sans-serif' }}>👖 צבע רגליים</p>
+              <p className="font-bold mb-3 text-sm uppercase tracking-wide" style={{ color: '#60A5FA', fontFamily: 'Heebo, sans-serif' }}>👖 צבע רגליים</p>
               <div className="flex flex-wrap gap-3">
                 {COLORS.map(c => <ColorBtn key={c.hex} color={c} active={legColor === c.hex} onClick={() => setLegs(c.hex)} />)}
               </div>
@@ -423,7 +423,7 @@ export default function MinifigBuilder() {
 
             {/* Accessory */}
             <div>
-              <p className="font-bold mb-3 text-sm uppercase tracking-wide" style={{ color: '#60A5FA', fontFamily: 'Rubik, sans-serif' }}>🛠️ אביזר ביד</p>
+              <p className="font-bold mb-3 text-sm uppercase tracking-wide" style={{ color: '#60A5FA', fontFamily: 'Heebo, sans-serif' }}>🛠️ אביזר ביד</p>
               <div className="flex flex-wrap gap-2">
                 {ACCS.map(a => <OptionBtn key={a} label={a} active={accessory === a} onClick={() => setAcc(a)} />)}
               </div>

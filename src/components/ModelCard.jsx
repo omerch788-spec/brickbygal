@@ -37,7 +37,7 @@ export default function ModelCard({ model, index, onOpen }) {
             background: (CATEGORY_BADGE[model.category] || CATEGORY_BADGE['Ideas']).bg,
             color: (CATEGORY_BADGE[model.category] || CATEGORY_BADGE['Ideas']).color,
             border: `1px solid ${(CATEGORY_BADGE[model.category] || CATEGORY_BADGE['Ideas']).color}44`,
-            fontFamily: 'Rubik, sans-serif',
+            fontFamily: 'Heebo, sans-serif',
           }}
         >
           {model.category}
@@ -47,12 +47,12 @@ export default function ModelCard({ model, index, onOpen }) {
       <div className="p-5">
         <h3
           className="font-black text-lg mb-2 text-white"
-          style={{ fontFamily: 'Righteous, cursive' }}
+          style={{ fontFamily: 'Varela Round, sans-serif' }}
         >
           {model.name}
         </h3>
 
-        <div className="flex justify-between text-sm mb-3" style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}>
+        <div className="flex justify-between text-sm mb-3" style={{ color: '#94A3B8', fontFamily: 'Heebo, sans-serif' }}>
           <span>🔩 {model.pieces.toLocaleString()} חלקים</span>
           <span>⏱ {model.buildTime}</span>
         </div>
@@ -63,7 +63,7 @@ export default function ModelCard({ model, index, onOpen }) {
           </div>
           <button
             className="font-bold text-sm px-4 py-1.5 rounded-lg text-white transition-all duration-150"
-            style={{ background: '#2563EB', border: '1px solid #2563EB', fontFamily: 'Rubik, sans-serif' }}
+            style={{ background: '#2563EB', border: '1px solid #2563EB', fontFamily: 'Heebo, sans-serif' }}
             onClick={e => { e.stopPropagation(); onOpen(model) }}
             onMouseEnter={e => e.currentTarget.style.background = '#1D4ED8'}
             onMouseLeave={e => e.currentTarget.style.background = '#2563EB'}

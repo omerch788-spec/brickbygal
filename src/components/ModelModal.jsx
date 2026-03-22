@@ -107,7 +107,7 @@ export default function ModelModal({ model, onClose }) {
             </button>
             <span
               className="absolute top-3 right-3 font-bold text-sm px-3 py-1 rounded-full"
-              style={{ background: 'rgba(96,165,250,0.15)', color: '#60A5FA', border: '1px solid rgba(96,165,250,0.3)', fontFamily: 'Rubik, sans-serif' }}
+              style={{ background: 'rgba(96,165,250,0.15)', color: '#60A5FA', border: '1px solid rgba(96,165,250,0.3)', fontFamily: 'Heebo, sans-serif' }}
             >
               {model.category}
             </span>
@@ -135,7 +135,7 @@ export default function ModelModal({ model, onClose }) {
               onClick={reset}
               style={{
                 color: '#60A5FA',
-                fontFamily: 'Rubik, sans-serif',
+                fontFamily: 'Heebo, sans-serif',
                 fontWeight: 700,
                 fontSize: 14,
                 minWidth: 46,
@@ -186,8 +186,8 @@ export default function ModelModal({ model, onClose }) {
           </div>
 
           <div className="p-6">
-            <h2 className="text-2xl font-black mb-2 text-white" style={{ fontFamily: 'Righteous, cursive' }}>{model.name}</h2>
-            <p className="mb-4" style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}>{model.description}</p>
+            <h2 className="text-2xl font-black mb-2 text-white" style={{ fontFamily: 'Varela Round, sans-serif' }}>{model.name}</h2>
+            <p className="mb-4" style={{ color: '#94A3B8', fontFamily: 'Heebo, sans-serif' }}>{model.description}</p>
 
             {/* Stats row */}
             <div className="grid grid-cols-2 gap-3 mb-4">
@@ -198,8 +198,8 @@ export default function ModelModal({ model, onClose }) {
                 { label: 'רמת קושי', value: <span>{[1,2,3,4,5].map(n => <BrickIcon key={n} filled={n <= model.difficulty} />)}</span> },
               ].map(s => (
                 <div key={s.label} className="rounded-xl p-3" style={{ background: '#0F1C2E', border: '1px solid rgba(96,165,250,0.15)' }}>
-                  <div className="text-xs mb-1" style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}>{s.label}</div>
-                  <div className="font-bold text-white" style={{ fontFamily: 'Rubik, sans-serif' }}>{s.value}</div>
+                  <div className="text-xs mb-1" style={{ color: '#94A3B8', fontFamily: 'Heebo, sans-serif' }}>{s.label}</div>
+                  <div className="font-bold text-white" style={{ fontFamily: 'Heebo, sans-serif' }}>{s.value}</div>
                 </div>
               ))}
             </div>
@@ -207,7 +207,7 @@ export default function ModelModal({ model, onClose }) {
             {/* Fun fact */}
             <div className="rounded-xl px-4 py-3" style={{ background: 'rgba(37,99,235,0.2)', border: '1px solid rgba(96,165,250,0.25)' }}>
               <span className="font-black text-sm" style={{ color: '#60A5FA' }}>💡 עובדה מגניבה: </span>
-              <span className="font-semibold text-sm text-white" style={{ fontFamily: 'Rubik, sans-serif' }}>{model.funFact}</span>
+              <span className="font-semibold text-sm text-white" style={{ fontFamily: 'Heebo, sans-serif' }}>{model.funFact}</span>
             </div>
           </div>
         </motion.div>

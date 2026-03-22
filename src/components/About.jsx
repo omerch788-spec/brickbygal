@@ -51,7 +51,7 @@ export default function About() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="text-4xl font-black text-center mb-12 text-white"
-          style={{ fontFamily: 'Righteous, cursive' }}
+          style={{ fontFamily: 'Varela Round, sans-serif' }}
         >
           מי אני?
         </motion.h2>
@@ -80,7 +80,7 @@ export default function About() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
               className="text-lg leading-relaxed"
-              style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}
+              style={{ color: '#94A3B8', fontFamily: 'Heebo, sans-serif' }}
             >
               התחלתי להרכיב לגו בגיל 10-11. קנו לי מכונית לגו והתחלתי לאהוב את זה משם.
             </motion.p>
@@ -90,7 +90,7 @@ export default function About() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.35 }}
               className="text-lg leading-relaxed"
-              style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}
+              style={{ color: '#94A3B8', fontFamily: 'Heebo, sans-serif' }}
             >
               מה שגרם לי לאהוב את התחביב הוא שזו עבודה מתאימה לכל גיל.
               יש לו הרבה יתרונות שעוזרים לי כמו: מוטוריקה עדינה, ריכוז, דיוק, סבלנות,
@@ -112,10 +112,10 @@ export default function About() {
               style={{ background: '#1E3A5F', border: '1px solid rgba(96,165,250,0.2)' }}
             >
               <div className="text-3xl mb-1">{s.icon}</div>
-              <div className="text-2xl font-black text-white" style={{ fontFamily: 'Righteous, cursive' }}>
+              <div className="text-2xl font-black text-white" style={{ fontFamily: 'Varela Round, sans-serif' }}>
                 <CountUp target={s.value} suffix={s.suffix} />
               </div>
-              <div className="text-sm font-medium" style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}>{s.label}</div>
+              <div className="text-sm font-medium" style={{ color: '#94A3B8', fontFamily: 'Heebo, sans-serif' }}>{s.label}</div>
             </motion.div>
           ))}
         </div>

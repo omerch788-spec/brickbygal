@@ -42,11 +42,11 @@ export default function ContactForm() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-4xl font-black text-center mb-3 text-white"
-          style={{ fontFamily: 'Righteous, cursive' }}
+          style={{ fontFamily: 'Varela Round, sans-serif' }}
         >
           יש לך שאלה?
         </motion.h2>
-        <p className="text-center mb-10" style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}>גל שמח לשמוע! כתוב/י לו ישירות.</p>
+        <p className="text-center mb-10" style={{ color: '#94A3B8', fontFamily: 'Heebo, sans-serif' }}>גל שמח לשמוע! כתוב/י לו ישירות.</p>
 
         <AnimatePresence mode="wait">
           {submitted ? (
@@ -57,8 +57,8 @@ export default function ContactForm() {
               className="text-center py-12"
             >
               <div className="text-6xl mb-4">✅</div>
-              <h3 className="text-2xl font-black mb-2 text-white" style={{ fontFamily: 'Righteous, cursive' }}>ההודעה נשלחה!</h3>
-              <p style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}>גל יחזור אליך בהקדם</p>
+              <h3 className="text-2xl font-black mb-2 text-white" style={{ fontFamily: 'Varela Round, sans-serif' }}>ההודעה נשלחה!</h3>
+              <p style={{ color: '#94A3B8', fontFamily: 'Heebo, sans-serif' }}>גל יחזור אליך בהקדם</p>
             </motion.div>
           ) : (
             <motion.form
@@ -72,11 +72,11 @@ export default function ContactForm() {
             >
               {/* Name */}
               <div className="mb-5">
-                <label className="block font-bold mb-1 text-white" style={{ fontFamily: 'Rubik, sans-serif' }}>שם מלא</label>
+                <label className="block font-bold mb-1 text-white" style={{ fontFamily: 'Heebo, sans-serif' }}>שם מלא</label>
                 <input
                   {...register('name', { required: 'שדה חובה' })}
                   className="w-full rounded-xl px-4 py-3 focus:outline-none text-white"
-                  style={{ background: '#0F1C2E', border: '1px solid rgba(96,165,250,0.2)', fontFamily: 'Rubik, sans-serif' }}
+                  style={{ background: '#0F1C2E', border: '1px solid rgba(96,165,250,0.2)', fontFamily: 'Heebo, sans-serif' }}
                   placeholder="הכנס/י שם..."
                 />
                 {errors.name && <p className="text-sm mt-1" style={{ color: '#F87171' }}>{errors.name.message}</p>}
@@ -84,7 +84,7 @@ export default function ContactForm() {
 
               {/* Email */}
               <div className="mb-5">
-                <label className="block font-bold mb-1 text-white" style={{ fontFamily: 'Rubik, sans-serif' }}>אימייל</label>
+                <label className="block font-bold mb-1 text-white" style={{ fontFamily: 'Heebo, sans-serif' }}>אימייל</label>
                 <input
                   type="email"
                   {...register('email', {
@@ -92,7 +92,7 @@ export default function ContactForm() {
                     pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'אימייל לא תקין' }
                   })}
                   className="w-full rounded-xl px-4 py-3 focus:outline-none text-white"
-                  style={{ background: '#0F1C2E', border: '1px solid rgba(96,165,250,0.2)', fontFamily: 'Rubik, sans-serif' }}
+                  style={{ background: '#0F1C2E', border: '1px solid rgba(96,165,250,0.2)', fontFamily: 'Heebo, sans-serif' }}
                   placeholder="your@email.com"
                 />
                 {errors.email && <p className="text-sm mt-1" style={{ color: '#F87171' }}>{errors.email.message}</p>}
@@ -100,11 +100,11 @@ export default function ContactForm() {
 
               {/* Subject */}
               <div className="mb-5">
-                <label className="block font-bold mb-1 text-white" style={{ fontFamily: 'Rubik, sans-serif' }}>נושא</label>
+                <label className="block font-bold mb-1 text-white" style={{ fontFamily: 'Heebo, sans-serif' }}>נושא</label>
                 <select
                   {...register('subject')}
                   className="w-full rounded-xl px-4 py-3 focus:outline-none text-white"
-                  style={{ background: '#0F1C2E', border: '1px solid rgba(96,165,250,0.2)', fontFamily: 'Rubik, sans-serif' }}
+                  style={{ background: '#0F1C2E', border: '1px solid rgba(96,165,250,0.2)', fontFamily: 'Heebo, sans-serif' }}
                 >
                   <option value="מחמאה">מחמאה</option>
                   <option value="שיתוף פעולה">שיתוף פעולה</option>
@@ -115,7 +115,7 @@ export default function ContactForm() {
 
               {/* Message */}
               <div className="mb-6">
-                <label className="block font-bold mb-1 text-white" style={{ fontFamily: 'Rubik, sans-serif' }}>הודעה</label>
+                <label className="block font-bold mb-1 text-white" style={{ fontFamily: 'Heebo, sans-serif' }}>הודעה</label>
                 <textarea
                   {...register('message', {
                     required: 'שדה חובה',
@@ -123,7 +123,7 @@ export default function ContactForm() {
                   })}
                   rows={4}
                   className="w-full rounded-xl px-4 py-3 focus:outline-none resize-none text-white"
-                  style={{ background: '#0F1C2E', border: '1px solid rgba(96,165,250,0.2)', fontFamily: 'Rubik, sans-serif' }}
+                  style={{ background: '#0F1C2E', border: '1px solid rgba(96,165,250,0.2)', fontFamily: 'Heebo, sans-serif' }}
                   placeholder="כתוב/י כאן..."
                 />
                 {errors.message && <p className="text-sm mt-1" style={{ color: '#F87171' }}>{errors.message.message}</p>}
@@ -132,7 +132,7 @@ export default function ContactForm() {
               <button
                 type="submit"
                 className="w-full text-white font-black text-lg py-4 rounded-xl cursor-pointer transition-all duration-150"
-                style={{ background: '#2563EB', fontFamily: 'Righteous, cursive' }}
+                style={{ background: '#2563EB', fontFamily: 'Varela Round, sans-serif' }}
                 onMouseEnter={e => e.currentTarget.style.background = '#1D4ED8'}
                 onMouseLeave={e => e.currentTarget.style.background = '#2563EB'}
               >

@@ -20,14 +20,15 @@ button, a, [role="button"] {
 }
 
 body {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Heebo', sans-serif;
+  font-weight: 400;
   background: #0F1C2E;
   color: #FFFFFF;
   margin: 0;
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Righteous', cursive;
+  font-family: 'Varela Round', sans-serif;
 }
 
 #root {

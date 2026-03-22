@@ -283,7 +283,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-5xl md:text-6xl font-black leading-tight mb-6 text-white"
-            style={{ fontFamily: 'Righteous, cursive' }}
+            style={{ fontFamily: 'Varela Round, sans-serif' }}
           >
             הלגו שלי, העולם שלי.
           </motion.h1>
@@ -292,7 +292,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-xl mb-10"
-            style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}
+            style={{ color: '#94A3B8', fontFamily: 'Heebo, sans-serif' }}
           >
             ברוכים הבאים לעולמי, בו כל דגם מספר סיפור
           </motion.p>

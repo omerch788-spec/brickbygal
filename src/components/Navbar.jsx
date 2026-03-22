@@ -52,7 +52,7 @@ export default function Navbar() {
             {/* Logo */}
             <button onClick={() => scrollTo('#root')} className="flex items-center gap-2">
               <BrickLogo />
-              <span className="font-black text-xl text-white" style={{ fontFamily: 'Righteous, cursive' }}>BrickByGal</span>
+              <span className="font-black text-xl text-white" style={{ fontFamily: 'Varela Round, sans-serif' }}>BrickByGal</span>
             </button>
 
             {/* Desktop links */}
@@ -62,7 +62,7 @@ export default function Navbar() {
                   key={l.href}
                   onClick={() => scrollTo(l.href)}
                   className="font-semibold pb-0.5 border-b-2 border-transparent transition-all"
-                  style={{ color: '#94A3B8', fontFamily: 'Rubik, sans-serif' }}
+                  style={{ color: '#94A3B8', fontFamily: 'Heebo, sans-serif' }}
                   onMouseEnter={e => { e.currentTarget.style.color = 'white'; e.currentTarget.style.borderBottomColor = '#60A5FA' }}
                   onMouseLeave={e => { e.currentTarget.style.color = '#94A3B8'; e.currentTarget.style.borderBottomColor = 'transparent' }}
                 >
@@ -98,7 +98,7 @@ export default function Navbar() {
                     key={l.href}
                     onClick={() => scrollTo(l.href)}
                     className="block w-full text-right px-6 py-4 font-semibold text-lg transition-colors"
-                    style={{ color: '#94A3B8', borderBottom: '1px solid rgba(255,255,255,0.06)', fontFamily: 'Rubik, sans-serif' }}
+                    style={{ color: '#94A3B8', borderBottom: '1px solid rgba(255,255,255,0.06)', fontFamily: 'Heebo, sans-serif' }}
                     onMouseEnter={e => { e.currentTarget.style.color = 'white'; e.currentTarget.style.background = '#1E3A5F' }}
                     onMouseLeave={e => { e.currentTarget.style.color = '#94A3B8'; e.currentTarget.style.background = 'transparent' }}
                   >
