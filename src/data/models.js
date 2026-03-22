@@ -155,7 +155,8 @@ export const models = [
     description: "דמות בובה מפורטת של דובי, שומר הבית האהוב מסדרת הארי פוטר, עם 403 חלקים. כולל גרב קטנה בצבע ירוק — סמל חירותו — עיניים גדולות ואוזניים ענקיות אופייניות, ועמדת תצוגה.",
     funFact: "הדגם כולל גרב קטנה שמסמלת את חירותו של דובי — בדיוק כמו בסרט!",
     image: "/brickbygal/dobbi.webp",
-    setNumber: "76421"
+    setNumber: "76421",
+    audio: "/brickbygal/harrypoter.mp3"
   },
   {
     id: 13,
@@ -181,7 +182,8 @@ export const models = [
     description: "הגריד והארי פוטר הקטן רוכבים על האופנוע המעופף עם 617 חלקים. כולל שתי מיניפיגים: הגריד ואוטו הסייד קאר המיוחד שמלווה אותם בטיסה.",
     funFact: "זה הדגם הראשון שמציג את הגריד עם האופנוע והסייד קאר המפורסם מתחילת הסרט הראשון!",
     image: "/brickbygal/hagrid.webp",
-    setNumber: "76443"
+    setNumber: "76443",
+    audio: "/brickbygal/harrypoter.mp3"
   },
   {
     id: 15,
@@ -198,7 +200,8 @@ export const models = [
     videos: [
       'https://www.youtube.com/embed/nhZTDyKLveY',
       'https://www.youtube.com/embed/LkssK3aUh5E',
-    ]
+    ],
+    audio: "/brickbygal/harrypoter.mp3"
   },
   {
     id: 16,
