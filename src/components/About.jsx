@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { models } from '../data/models'
 
 const totalModels = models.length
-const totalPieces = models.reduce((sum, m) => sum + m.pieces, 0)
+const totalPieces = models.reduce((sum, m) => sum + (m.pieces ?? 0), 0)
 
 const stats = [
   { icon: '🧱', value: totalModels, suffix: '+', label: 'דגמים' },

@@ -53,7 +53,7 @@ export default function ModelCard({ model, index, onOpen }) {
         </h3>
 
         <div className="flex justify-between text-sm mb-3" style={{ color: '#94A3B8', fontFamily: 'Heebo, sans-serif' }}>
-          <span>🔩 {model.pieces.toLocaleString()} חלקים</span>
+          <span>🔩 {model.pieces != null ? model.pieces.toLocaleString() : '~'} חלקים</span>
           <span>⏱ {model.buildTime}</span>
         </div>
 

@@ -192,7 +192,7 @@ export default function ModelModal({ model, onClose }) {
             {/* Stats row */}
             <div className="grid grid-cols-2 gap-3 mb-4">
               {[
-                { label: 'חלקים', value: model.pieces.toLocaleString() },
+                { label: 'חלקים', value: model.pieces != null ? model.pieces.toLocaleString() : '~' },
                 { label: 'זמן בנייה', value: model.buildTime },
                 { label: 'שנת בנייה', value: model.year },
                 { label: 'רמת קושי', value: <span>{[1,2,3,4,5].map(n => <BrickIcon key={n} filled={n <= model.difficulty} />)}</span> },
