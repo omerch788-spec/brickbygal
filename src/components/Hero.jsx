@@ -256,95 +256,57 @@ export default function Hero() {
   const scrollTo = id => document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' })
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-16" style={{ zIndex: 1 }}>
-
-      {/* Floating background bricks */}
-      {SHAPES.map((s, i) => (
-        <div key={i} className="absolute pointer-events-none" style={{
-          left: `${s.x}%`, top: `${s.y}%`,
-          width: s.w, height: s.h,
-          background: s.color, borderRadius: 3, opacity: 0.1,
-          transform: `rotate(${s.r}deg)`,
-          animation: `floatBrick ${4 + s.delay}s ease-in-out infinite`,
-          animationDelay: `${s.delay}s`,
-        }} />
-      ))}
-
-      {/*
-        RTL flex-row: first child → RIGHT, second child → LEFT.
-        order-1 md:order-2 puts globe first on mobile (top) and second (LEFT) on desktop.
-      */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-20
-                      flex flex-col md:flex-row items-center gap-12 md:gap-16">
-
-        {/* ── Text (right side desktop, bottom mobile) ── */}
-        <div className="flex-1 text-center md:text-right order-2 md:order-1">
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-5xl md:text-6xl font-black leading-tight mb-6 text-white"
-            style={{ fontFamily: 'Varela Round, sans-serif' }}
-          >
-            הלגו שלי, העולם שלי.
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-xl mb-10"
-            style={{ color: '#94A3B8', fontFamily: 'Heebo, sans-serif' }}
-          >
-            ברוכים הבאים לעולמי, בו כל דגם מספר סיפור
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center md:justify-end"
-          >
-            <button
-              onClick={() => scrollTo('#gallery')}
-              className="font-black text-lg px-10 py-4 rounded-xl cursor-pointer transition-all duration-200 text-white"
-              style={{ background: '#2563EB', border: '2px solid #2563EB' }}
-              onMouseEnter={e => e.currentTarget.style.background = '#1D4ED8'}
-              onMouseLeave={e => e.currentTarget.style.background = '#2563EB'}
-            >
-              צפה בדגמים
-            </button>
-            <button
-              onClick={() => scrollTo('#about')}
-              className="font-black text-lg px-10 py-4 rounded-xl cursor-pointer transition-all duration-200 text-white"
-              style={{ background: 'transparent', border: '2px solid white' }}
-              onMouseEnter={e => { e.currentTarget.style.background = 'white'; e.currentTarget.style.color = '#0F1C2E' }}
-              onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'white' }}
-            >
-              קצת עלי
-            </button>
-          </motion.div>
-        </div>
-
-        {/* ── Globe (left side desktop, top mobile) ── */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.75 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.1, delay: 0.25 }}
-          className="flex-shrink-0 flex justify-center order-1 md:order-2
-                     scale-[0.65] md:scale-100"
-          style={{ transformOrigin: 'center center', perspective: '1000px' }}
+    <section
+      className="relative flex items-center justify-center overflow-hidden pt-16"
+      style={{ minHeight: '90vh', zIndex: 1 }}
+    >
+      <div
+        className="relative z-10 flex flex-col items-center text-center px-6 py-20"
+        style={{ maxWidth: 800, margin: '0 auto', width: '100%' }}
+      >
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="font-black leading-tight mb-6 text-white"
+          style={{ fontFamily: 'Varela Round, sans-serif', fontSize: 'clamp(2.8rem, 6vw, 4.5rem)' }}
         >
-          <img
-            src="/brickbygal/globe.png"
-            alt="LEGO Globe"
-            className="w-[220px] h-[220px] md:w-[350px] md:h-[350px]"
-            style={{
-              objectFit: 'contain',
-              animation: 'spinGlobe 25s linear infinite',
-              filter: 'drop-shadow(0 20px 60px rgba(37,99,235,0.3))',
-              transformStyle: 'preserve-3d',
-            }}
-          />
-        </motion.div>
+          הלגו שלי, העולם שלי.
+        </motion.h1>
 
+        <motion.p
+          initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="text-xl mb-10"
+          style={{ color: '#94A3B8', fontFamily: 'Heebo, sans-serif' }}
+        >
+          ברוכים הבאים לעולמי, בו כל דגם מספר סיפור
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="flex flex-col sm:flex-row justify-center"
+          style={{ gap: 16 }}
+        >
+          <button
+            onClick={() => scrollTo('#gallery')}
+            className="font-black text-lg px-10 py-4 rounded-xl cursor-pointer transition-all duration-200 text-white"
+            style={{ background: '#2563EB', border: '2px solid #2563EB' }}
+            onMouseEnter={e => e.currentTarget.style.background = '#1D4ED8'}
+            onMouseLeave={e => e.currentTarget.style.background = '#2563EB'}
+          >
+            צפה בדגמים
+          </button>
+          <button
+            onClick={() => scrollTo('#about')}
+            className="font-black text-lg px-10 py-4 rounded-xl cursor-pointer transition-all duration-200 text-white"
+            style={{ background: 'transparent', border: '2px solid white' }}
+            onMouseEnter={e => { e.currentTarget.style.background = 'white'; e.currentTarget.style.color = '#0F1C2E' }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'white' }}
+          >
+            קצת עלי
+          </button>
+        </motion.div>
       </div>
 
       {/* Bounce-down arrow */}
