@@ -2,12 +2,11 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const BrickLogo = () => (
-  <svg width="32" height="24" viewBox="0 0 32 24" fill="none">
-    <rect x="0" y="8" width="32" height="16" rx="3" fill="#2563EB" />
-    <rect x="3" y="4" width="7" height="7" rx="3.5" fill="#1D4ED8" />
-    <rect x="13" y="4" width="7" height="7" rx="3.5" fill="#1D4ED8" />
-    <rect x="23" y="4" width="7" height="7" rx="3.5" fill="#1D4ED8" />
-  </svg>
+  <img
+    src="/brickbygal/brickblue.png"
+    alt="lego brick"
+    style={{ height: 32, width: 'auto', verticalAlign: 'middle', marginLeft: 8, objectFit: 'contain' }}
+  />
 )
 
 const links = [
