@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState, useRef, useCallback } from 'react'
+import { useState, useRef, useCallback, useEffect } from 'react'
 
 function VideoTabs({ videos }) {
   const [active, setActive] = useState(0)
@@ -58,9 +58,41 @@ const ZOOM_MAX = 3
 export default function ModelModal({ model, onClose }) {
   const [zoom, setZoom] = useState(1)
   const [pan, setPan] = useState({ x: 0, y: 0 })
+  const [muted, setMuted] = useState(false)
   const dragging = useRef(false)
   const dragStart = useRef({ x: 0, y: 0 })
   const panStart = useRef({ x: 0, y: 0 })
+  const audioRef = useRef(null)
+
+  useEffect(() => {
+    if (!model?.audio) return
+    const audio = new Audio(model.audio)
+    audio.loop = true
+    audio.volume = 0
+    audioRef.current = audio
+    audio.play().catch(() => {})
+
+    const fadeIn = setInterval(() => {
+      if (audio.volume < 0.25) audio.volume = Math.min(0.3, audio.volume + 0.05)
+      else clearInterval(fadeIn)
+    }, 100)
+
+    return () => {
+      clearInterval(fadeIn)
+      const snapshot = audio.volume
+      let vol = snapshot
+      const fadeOut = setInterval(() => {
+        vol = Math.max(0, vol - 0.05)
+        audio.volume = vol
+        if (vol <= 0) { audio.pause(); audio.src = ''; clearInterval(fadeOut) }
+      }, 100)
+    }
+  }, [model?.audio])
+
+  const toggleMute = () => {
+    if (audioRef.current) audioRef.current.muted = !muted
+    setMuted(m => !m)
+  }
 
   if (!model) return null
 
@@ -153,6 +185,19 @@ export default function ModelModal({ model, onClose }) {
             >
               ✕
             </button>
+
+            {model.audio && (
+              <button
+                onClick={toggleMute}
+                className="absolute top-3 rounded-full w-9 h-9 flex items-center justify-center text-lg transition-colors text-white"
+                style={{ left: 52, background: 'rgba(15,28,46,0.8)', border: '1px solid rgba(96,165,250,0.3)' }}
+                onMouseEnter={e => e.currentTarget.style.background = '#2563EB'}
+                onMouseLeave={e => e.currentTarget.style.background = 'rgba(15,28,46,0.8)'}
+                title={muted ? 'הפעל מוזיקה' : 'השתק מוזיקה'}
+              >
+                {muted ? '🔇' : '🎵'}
+              </button>
+            )}
             <span
               className="absolute top-3 right-3 font-bold text-sm px-3 py-1 rounded-full"
               style={{ background: 'rgba(96,165,250,0.15)', color: '#60A5FA', border: '1px solid rgba(96,165,250,0.3)', fontFamily: 'Heebo, sans-serif' }}
