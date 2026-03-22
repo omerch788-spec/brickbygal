@@ -211,6 +211,7 @@ export const models = [
     description: "שחזור מפורט של מגדלור עם 2,065 חלקים. כולל אור LED חכם שניתן לשלוט בו דרך אפליקציה, קוטג' שומר מגדלור, גינה ומחסן. המגדלור מסתובב בפועל ומאיר.",
     funFact: "האור של המגדלור מסתובב ומהבהב בדיוק כמו מגדלור אמיתי — וניתן לשלוט עליו דרך האפליקציה!",
     image: "/brickbygal/lighthouse (1).webp",
-    setNumber: "21335"
+    setNumber: "21335",
+    audio: "/brickbygal/lighthouse.mp3"
   }
 ]
