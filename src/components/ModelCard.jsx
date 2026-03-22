@@ -29,6 +29,8 @@ export default function ModelCard({ model, index, onOpen }) {
     >
       <div className="relative">
         <img src={model.image} alt={model.name}
+          loading="lazy"
+          decoding="async"
           className="w-full"
           style={{ height: 220, objectFit: 'contain', background: '#1E3A5F' }} />
         <span

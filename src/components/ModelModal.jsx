@@ -133,6 +133,8 @@ export default function ModelModal({ model, onClose }) {
               <img
                 src={model.image}
                 alt={model.name}
+                loading="lazy"
+                decoding="async"
                 draggable={false}
                 style={{
                   display: 'block',

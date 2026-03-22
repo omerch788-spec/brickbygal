@@ -68,6 +68,8 @@ export default function About() {
             <img
               src="/brickbygal/gal.jpg"
               alt="גל"
+              loading="lazy"
+              decoding="async"
               style={{ width: 250, height: 250, borderRadius: '50%', objectFit: 'cover', border: '4px solid #2563EB', boxShadow: '0 0 32px rgba(37,99,235,0.4)' }}
             />
           </motion.div>

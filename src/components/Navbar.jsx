@@ -5,6 +5,8 @@ const BrickLogo = () => (
   <img
     src="/brickbygal/brickblue.png"
     alt="lego brick"
+    loading="eager"
+    decoding="async"
     style={{ height: 32, width: 'auto', verticalAlign: 'middle', marginLeft: 8, objectFit: 'contain' }}
   />
 )

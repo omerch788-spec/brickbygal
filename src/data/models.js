@@ -152,7 +152,7 @@ export const models = [
     year: 2023,
     description: "דמות בובה מפורטת של דובי, שומר הבית האהוב מסדרת הארי פוטר, עם 403 חלקים. כולל גרב קטנה בצבע ירוק — סמל חירותו — עיניים גדולות ואוזניים ענקיות אופייניות, ועמדת תצוגה.",
     funFact: "הדגם כולל גרב קטנה שמסמלת את חירותו של דובי — בדיוק כמו בסרט!",
-    image: "/brickbygal/dobbi.png",
+    image: "/brickbygal/dobbi.webp",
     setNumber: "76421"
   },
   {
@@ -178,7 +178,7 @@ export const models = [
     year: 2025,
     description: "הגריד והארי פוטר הקטן רוכבים על האופנוע המעופף עם 617 חלקים. כולל שתי מיניפיגים: הגריד ואוטו הסייד קאר המיוחד שמלווה אותם בטיסה.",
     funFact: "זה הדגם הראשון שמציג את הגריד עם האופנוע והסייד קאר המפורסם מתחילת הסרט הראשון!",
-    image: "/brickbygal/hagrid.png",
+    image: "/brickbygal/hagrid.webp",
     setNumber: "76443"
   },
   {
@@ -191,7 +191,7 @@ export const models = [
     year: 2023,
     description: "שחזור מרהיב של בנק גרינגוטס הקוסמים עם 4,803 חלקים. כולל אולם הכניסה המרשים, צינורות הוב, כספות נסתרות ורכבת הגרינגוטס. אחד הסטים הגדולים ביקום הארי פוטר.",
     funFact: "גרינגוטס הוא הסט הגדול ביותר בנושא הארי פוטר — עם כמעט 5,000 חלקים ופרטים מדהימים מהסרט!",
-    image: "/brickbygal/harrypoterbank.png",
+    image: "/brickbygal/harrypoterbank.webp",
     setNumber: "76417",
     videos: [
       '/brickbygal/videobankharrypoter (1).mp4',
@@ -208,7 +208,7 @@ export const models = [
     year: 2022,
     description: "שחזור מפורט של מגדלור עם 2,065 חלקים. כולל אור LED חכם שניתן לשלוט בו דרך אפליקציה, קוטג' שומר מגדלור, גינה ומחסן. המגדלור מסתובב בפועל ומאיר.",
     funFact: "האור של המגדלור מסתובב ומהבהב בדיוק כמו מגדלור אמיתי — וניתן לשלוט עליו דרך האפליקציה!",
-    image: "/brickbygal/lighthouse__1_.png",
+    image: "/brickbygal/lighthouse (1).webp",
     setNumber: "21335"
   }
 ]
