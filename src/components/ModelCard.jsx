@@ -16,7 +16,7 @@ export default function ModelCard({ model, index, onOpen }) {
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: false, amount: 0.15 }}
       transition={{ duration: 0.4, delay: index * 0.08 }}
       whileHover={{ y: -4 }}
       className="rounded-2xl overflow-hidden cursor-pointer"

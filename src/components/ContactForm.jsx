@@ -40,7 +40,7 @@ export default function ContactForm() {
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.15 }}
           className="text-4xl font-black text-center mb-3 text-white"
           style={{ fontFamily: 'Varela Round, sans-serif' }}
         >

@@ -18,7 +18,7 @@ export default function Gallery() {
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.15 }}
           className="text-4xl font-black text-center mb-2 text-white"
           style={{ fontFamily: 'Varela Round, sans-serif' }}
         >
@@ -27,7 +27,7 @@ export default function Gallery() {
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.15 }}
           transition={{ delay: 0.15 }}
           className="text-center mb-7"
           style={{ color: '#94A3B8', fontFamily: 'Heebo, sans-serif', fontSize: '1rem', opacity: 0.8 }}

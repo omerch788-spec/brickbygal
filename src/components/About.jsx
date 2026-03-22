@@ -48,7 +48,7 @@ export default function About() {
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: false, amount: 0.15 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="text-4xl font-black text-center mb-12 text-white"
           style={{ fontFamily: 'Varela Round, sans-serif' }}
@@ -61,7 +61,7 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: false, amount: 0.15 }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
             className="flex-shrink-0"
           >
@@ -77,7 +77,7 @@ export default function About() {
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: false, amount: 0.15 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
               className="text-lg leading-relaxed"
               style={{ color: '#94A3B8', fontFamily: 'Heebo, sans-serif' }}
@@ -87,7 +87,7 @@ export default function About() {
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: false, amount: 0.15 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.35 }}
               className="text-lg leading-relaxed"
               style={{ color: '#94A3B8', fontFamily: 'Heebo, sans-serif' }}
@@ -106,7 +106,7 @@ export default function About() {
               key={s.label}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: false, amount: 0.15 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.45 + i * 0.1 }}
               className="rounded-2xl p-5 text-center"
               style={{ background: '#1E3A5F', border: '1px solid rgba(96,165,250,0.2)' }}
