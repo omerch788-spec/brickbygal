@@ -3,12 +3,6 @@ import { useState, useRef, useCallback } from 'react'
 
 function VideoTabs({ videos }) {
   const [active, setActive] = useState(0)
-  const videoRefs = useRef([])
-
-  const switchTo = (i) => {
-    if (videoRefs.current[active]) videoRefs.current[active].pause()
-    setActive(i)
-  }
 
   return (
     <div className="mt-5">
@@ -16,7 +10,7 @@ function VideoTabs({ videos }) {
         {videos.map((_, i) => (
           <button
             key={i}
-            onClick={() => switchTo(i)}
+            onClick={() => setActive(i)}
             style={{
               fontFamily: 'Heebo, sans-serif',
               fontWeight: 700,
@@ -35,16 +29,17 @@ function VideoTabs({ videos }) {
         ))}
       </div>
       {videos.map((src, i) => (
-        <video
+        <iframe
           key={i}
-          ref={el => { videoRefs.current[i] = el }}
-          src={src}
-          controls
+          src={active === i ? src : ''}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
           style={{
             display: active === i ? 'block' : 'none',
             width: '100%',
+            aspectRatio: '9/16',
             borderRadius: 12,
-            background: '#0F1C2E',
+            border: 'none',
           }}
         />
       ))}

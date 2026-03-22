@@ -194,8 +194,8 @@ export const models = [
     image: "/brickbygal/harrypoterbank.webp",
     setNumber: "76417",
     videos: [
-      '/brickbygal/videobankharrypoter (1).mp4',
-      '/brickbygal/videobankharrypoter (2).mp4',
+      'https://www.youtube.com/embed/nhZTDyKLveY',
+      'https://www.youtube.com/embed/LkssK3aUh5E',
     ]
   },
   {
