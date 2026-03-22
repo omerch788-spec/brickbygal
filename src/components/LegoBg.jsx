@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react'
 
 const IMAGES = [
-  '/brickbygal/bricks/brickred.png',
-  '/brickbygal/bricks/brickyellow.png',
-  '/brickbygal/bricks/brickblue.png',
-  '/brickbygal/bricks/brickgreen.png',
+  '/brickbygal/brickred.png',
+  '/brickbygal/brickyellow.png',
+  '/brickbygal/brickblue.png',
+  '/brickbygal/brickgreen.png',
 ]
 
 function createBrick(container) {
