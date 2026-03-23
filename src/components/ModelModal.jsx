@@ -115,6 +115,24 @@ export default function ModelModal({ model, onClose }) {
   const zoomOut = () => { setZoom(z => clampZoom(z - ZOOM_STEP)); if (zoom - ZOOM_STEP <= 1) setPan({ x: 0, y: 0 }) }
   const reset   = () => { setZoom(1); setPan({ x: 0, y: 0 }) }
 
+  const touchStartX = useRef(null)
+
+  const onTouchStart = (e) => {
+    if (!model.images) return
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const onTouchEnd = (e) => {
+    if (!model.images || touchStartX.current === null || zoom > 1) return
+    const dx = touchStartX.current - e.changedTouches[0].clientX
+    if (Math.abs(dx) < 50) return
+    const next = dx > 0
+      ? Math.min(activeImg + 1, model.images.length - 1)
+      : Math.max(activeImg - 1, 0)
+    switchImg(next)
+    touchStartX.current = null
+  }
+
   const onWheel = (e) => {
     e.preventDefault()
     setZoom(z => clampZoom(z + (e.deltaY < 0 ? ZOOM_STEP : -ZOOM_STEP)))
@@ -169,6 +187,8 @@ export default function ModelModal({ model, onClose }) {
               onMouseMove={onMouseMove}
               onMouseUp={onMouseUp}
               onMouseLeave={onMouseUp}
+              onTouchStart={onTouchStart}
+              onTouchEnd={onTouchEnd}
             >
               <img
                 src={model.images ? model.images[activeImg] : model.image}
