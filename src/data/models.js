@@ -265,8 +265,8 @@ export const models = [
     year: 2020,
     description: "שחזור טכניק מרהיב של למבורגיני סיאן FKP 37 עם 3,696 חלקים. כולל מנוע V12 עובד, תיבת הילוכים, אגף אחורי נשלף ודלתות ציר אייקוניות.",
     funFact: "הסיאן הוא ההיברידי הראשון של למבורגיני — ויוצרו רק 63 יחידות בעולם!",
-    image: "/brickbygal/lambo.jpeg",
-    images: ["/brickbygal/lambo.jpeg", "/brickbygal/lambo1.jpeg"],
+    image: "/brickbygal/lambo1.jpeg",
+    images: ["/brickbygal/lambo1.jpeg", "/brickbygal/lambo.jpeg"],
     setNumber: "42115"
   },
   {
