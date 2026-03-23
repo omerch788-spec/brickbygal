@@ -36,6 +36,7 @@ export const models = [
     description: "שחזור מפורט של מרצדס G-500 בצבע כתום עז עם 2,891 חלקים. כולל מנוע 6 בוכנות עובד, תיבת הילוכים עם הילוך קדימה/אחורה/ניוטרל, 2 נעילות דיפרנציאל, גלגל גיבוי ומדף גג.",
     funFact: "הדגם חוגג 45 שנה למרצדס G-Class — וכל הפונקציות המכאניות עובדות באמת!",
     image: "/brickbygal/mercedes.jpg",
+    images: ["/brickbygal/mercedes.jpg", "/brickbygal/defender4.jpeg"],
     setNumber: "42177"
   },
   {
@@ -251,7 +252,7 @@ export const models = [
     description: "שחזור מאופס של לנד רובר דיפנדר 90 הקלאסי עם 2,336 חלקים. כולל מנוע V8 מפורט, תיבת גיבוי, גג נשלף, דלת אחורית ואביזרי שטח מלאים.",
     funFact: "הדיפנדר 90 הוא אחת הרכיבות הנצחיות ביותר בהיסטוריה — ועכשיו אפשר לבנות אותה!",
     image: "/brickbygal/defender.jpeg",
-    images: ["/brickbygal/defender.jpeg", "/brickbygal/defender1.jpeg", "/brickbygal/defender2.jpeg", "/brickbygal/defender3.jpeg", "/brickbygal/defender4.jpeg"],
+    images: ["/brickbygal/defender.jpeg", "/brickbygal/defender1.jpeg", "/brickbygal/defender2.jpeg", "/brickbygal/defender3.jpeg"],
     setNumber: "10317"
   },
   {
