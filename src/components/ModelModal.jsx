@@ -115,23 +115,51 @@ export default function ModelModal({ model, onClose }) {
   const zoomOut = () => { setZoom(z => clampZoom(z - ZOOM_STEP)); if (zoom - ZOOM_STEP <= 1) setPan({ x: 0, y: 0 }) }
   const reset   = () => { setZoom(1); setPan({ x: 0, y: 0 }) }
 
+  const imgContainerRef = useRef(null)
   const touchStartX = useRef(null)
+  const touchStartY = useRef(null)
+  const activeImgRef = useRef(activeImg)
+  activeImgRef.current = activeImg
 
-  const onTouchStart = (e) => {
-    if (!model.images) return
-    touchStartX.current = e.touches[0].clientX
-  }
+  useEffect(() => {
+    if (!model?.images) return
+    const el = imgContainerRef.current
+    if (!el) return
 
-  const onTouchEnd = (e) => {
-    if (!model.images || touchStartX.current === null || zoom > 1) return
-    const dx = touchStartX.current - e.changedTouches[0].clientX
-    if (Math.abs(dx) < 50) return
-    const next = dx > 0
-      ? Math.min(activeImg + 1, model.images.length - 1)
-      : Math.max(activeImg - 1, 0)
-    switchImg(next)
-    touchStartX.current = null
-  }
+    const handleTouchStart = (e) => {
+      touchStartX.current = e.touches[0].clientX
+      touchStartY.current = e.touches[0].clientY
+    }
+
+    const handleTouchMove = (e) => {
+      if (touchStartX.current === null) return
+      const dx = Math.abs(e.touches[0].clientX - touchStartX.current)
+      const dy = Math.abs(e.touches[0].clientY - touchStartY.current)
+      if (dx > dy && dx > 10) e.preventDefault()
+    }
+
+    const handleTouchEnd = (e) => {
+      if (touchStartX.current === null) return
+      const dx = touchStartX.current - e.changedTouches[0].clientX
+      touchStartX.current = null
+      touchStartY.current = null
+      if (Math.abs(dx) < 50) return
+      const cur = activeImgRef.current
+      const next = dx > 0
+        ? Math.min(cur + 1, model.images.length - 1)
+        : Math.max(cur - 1, 0)
+      switchImg(next)
+    }
+
+    el.addEventListener('touchstart', handleTouchStart, { passive: true })
+    el.addEventListener('touchmove', handleTouchMove, { passive: false })
+    el.addEventListener('touchend', handleTouchEnd, { passive: true })
+    return () => {
+      el.removeEventListener('touchstart', handleTouchStart)
+      el.removeEventListener('touchmove', handleTouchMove)
+      el.removeEventListener('touchend', handleTouchEnd)
+    }
+  }, [model?.images])
 
   const onWheel = (e) => {
     e.preventDefault()
@@ -176,6 +204,7 @@ export default function ModelModal({ model, onClose }) {
           {/* Image */}
           <div className="relative">
             <div
+              ref={imgContainerRef}
               style={{
                 overflow: 'hidden',
                 background: '#1E3A5F',
@@ -187,8 +216,6 @@ export default function ModelModal({ model, onClose }) {
               onMouseMove={onMouseMove}
               onMouseUp={onMouseUp}
               onMouseLeave={onMouseUp}
-              onTouchStart={onTouchStart}
-              onTouchEnd={onTouchEnd}
             >
               <img
                 src={model.images ? model.images[activeImg] : model.image}
