@@ -281,5 +281,33 @@ export const models = [
     image: "/brickbygal/motorbike.jpeg",
     images: ["/brickbygal/motorbike.jpeg", "/brickbygal/motorbike1.jpeg", "/brickbygal/motorbike2.jpeg"],
     setNumber: "42159"
+  },
+  {
+    id: 21,
+    name: "טנדר חווה וינטג'",
+    category: "Icons",
+    pieces: 1677,
+    difficulty: 5,
+    buildTime: "זמן לא ידוע",
+    year: 2021,
+    description: "שחזור מפורט של פורד F-100 וינטג' עם 1,677 חלקים. כולל מנוע V8 מפורט, חצר חווה עם עגלה, פרה וסביבה כפרית אותנטית. דגם נוסטלגי עם אלפי פרטים.",
+    funFact: "הטנדר מגיע עם פרה ועגלת חציר — אחד הדגמי לגו הבודדים שכוללים סביבת חווה שלמה!",
+    image: "/brickbygal/tender.jpeg",
+    images: ["/brickbygal/tender.jpeg", "/brickbygal/tender1.jpeg", "/brickbygal/tender2.jpeg"],
+    setNumber: "10290"
+  },
+  {
+    id: 22,
+    name: "גוסטבסטרס ECTO-1",
+    category: "Icons",
+    pieces: 2352,
+    difficulty: 5,
+    buildTime: "זמן לא ידוע",
+    year: 2020,
+    description: "שחזור האייקוני של מכונית גוסטבסטרס ECTO-1 עם 2,352 חלקים. כולל 4 מיניפיגים של צוות הגוסטבסטרס, מכשירי ציד רוחות, סולם גג ואנטנות. פרטים מדויקים מהסרט.",
+    funFact: "ה-ECTO-1 מבוססת על אמבולנס מ-1959 — ולגו שחזרה כל פרט קטן מהרכב האייקוני!",
+    image: "/brickbygal/whitecar.jpeg",
+    images: ["/brickbygal/whitecar.jpeg", "/brickbygal/whitecar1.jpeg", "/brickbygal/whitecar2.jpeg"],
+    setNumber: "10274"
   }
 ]
