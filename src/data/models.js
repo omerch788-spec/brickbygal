@@ -49,6 +49,7 @@ export const models = [
     description: "פסל חתול שחור-לבן ריאליסטי עם 1,693 חלקים. ניתן לסובב את הראש, לכוונן את האוזניים, הכפות והזנב. אפשר לבחור בין עיניים צהובות או כחולות, ולבנות את הפה פתוח או סגור.",
     funFact: "החתול אלרגי-ידידותי לחלוטין — מושלם לאוהבי חתולים שלא יכולים להחזיק אחד אמיתי!",
     image: "/brickbygal/cat.jpg",
+    images: ["/brickbygal/cat.jpg", "/brickbygal/cat1.jpeg"],
     setNumber: "21349"
   },
   {
@@ -62,6 +63,7 @@ export const models = [
     description: "שחזור מדויק של תא הטלפון האדום האייקוני של לונדון עם 1,460 חלקים. כולל פנס רחוב, גינה קטנה, מדרכה מרוצפת וטלפון וינטאג' בפנים. לחיצה על הגג מדליקה אור בפנים.",
     funFact: "הדגם יצא בדיוק ב-100 שנה לתא הטלפון K2 המקורי — ויש בו לבנת אור שמאירה את הפנים!",
     image: "/brickbygal/phonebox.jpg",
+    images: ["/brickbygal/phonebox.jpg", "/brickbygal/phonebox1.jpeg", "/brickbygal/phonebox2.jpeg", "/brickbygal/phonebox4.jpeg"],
     setNumber: "21347"
   },
   {
@@ -75,6 +77,7 @@ export const models = [
     description: "רביעיית ג'אז מלאה עם 1,606 חלקים — פסנתרן, נגן בס, חצוצרן ותופף, כל אחד בתנוחה דינמית. הסט כולל הוראות בנייה נפרדות לכל נגן ולכל כלי, כך שניתן לבנות יחד.",
     funFact: "אפשר לבנות את 4 הנגנים במקביל עם 4 אנשים שונים — ואז לחבר את הבמה!",
     image: "/brickbygal/jazz.jpg",
+    images: ["/brickbygal/jazz.jpg", "/brickbygal/jazz1.jpeg", "/brickbygal/jazz2.jpeg"],
     setNumber: "21334",
     audio: "/brickbygal/jazz-bg.mp3"
   },
@@ -102,6 +105,7 @@ export const models = [
     description: "שחזור מרשים של מערכת השיגור Artemis של NASA עם 3,601 חלקים. כולל טיל רב-שלבי, 2 מאיצים, קפסולת Orion ומגדל שיגור נייד מפורט עם גשר צוות ו-umbilicals נשלפים.",
     funFact: "הדגם גבוה יותר ממטר! ניתן להפריד את שלבי הטיל בדיוק כמו בשיגור אמיתי.",
     image: "/brickbygal/nasa.jpg",
+    images: ["/brickbygal/nasa.jpg", "/brickbygal/nasa1.jpeg", "/brickbygal/nasa2.jpeg"],
     setNumber: "10341"
   },
   {
@@ -221,5 +225,61 @@ export const models = [
     image: "/brickbygal/lighthouse.webp",
     setNumber: "21335",
     audio: "/brickbygal/lighthouse.mp3"
+  },
+  {
+    id: 17,
+    name: "וספה 125",
+    category: "Icons",
+    pieces: 1106,
+    difficulty: 5,
+    buildTime: "זמן לא ידוע",
+    year: 2022,
+    description: "שחזור מפורט של קלנועית וספה הקלאסית האיטלקית עם 1,106 חלקים. כולל מנוע עובד, מזוודה, תיק יד ובמבי קטן. הדגם מציג את היופי האייקוני של וספה מסוף שנות ה-50.",
+    funFact: "הוספה הקלאסית תוכננה על ידי מעצב מטוסים — ולכן הגוף שלה חלק ומעוצב כמו מטוס!",
+    image: "/brickbygal/bluemotor.jpeg",
+    images: ["/brickbygal/bluemotor.jpeg", "/brickbygal/bluemotor1.jpeg"],
+    setNumber: "10298"
+  },
+  {
+    id: 18,
+    name: "לנד רובר דיפנדר 90",
+    category: "Icons",
+    pieces: 2336,
+    difficulty: 5,
+    buildTime: "זמן לא ידוע",
+    year: 2023,
+    description: "שחזור מאופס של לנד רובר דיפנדר 90 הקלאסי עם 2,336 חלקים. כולל מנוע V8 מפורט, תיבת גיבוי, גג נשלף, דלת אחורית ואביזרי שטח מלאים.",
+    funFact: "הדיפנדר 90 הוא אחת הרכיבות הנצחיות ביותר בהיסטוריה — ועכשיו אפשר לבנות אותה!",
+    image: "/brickbygal/defender.jpeg",
+    images: ["/brickbygal/defender.jpeg", "/brickbygal/defender1.jpeg", "/brickbygal/defender2.jpeg", "/brickbygal/defender3.jpeg", "/brickbygal/defender4.jpeg"],
+    setNumber: "10317"
+  },
+  {
+    id: 19,
+    name: "למבורגיני סיאן FKP 37",
+    category: "Technic",
+    pieces: 3696,
+    difficulty: 5,
+    buildTime: "זמן לא ידוע",
+    year: 2020,
+    description: "שחזור טכניק מרהיב של למבורגיני סיאן FKP 37 עם 3,696 חלקים. כולל מנוע V12 עובד, תיבת הילוכים, אגף אחורי נשלף ודלתות ציר אייקוניות.",
+    funFact: "הסיאן הוא ההיברידי הראשון של למבורגיני — ויוצרו רק 63 יחידות בעולם!",
+    image: "/brickbygal/lambo.jpeg",
+    images: ["/brickbygal/lambo.jpeg", "/brickbygal/lambo1.jpeg"],
+    setNumber: "42115"
+  },
+  {
+    id: 20,
+    name: "ימהה MT-10 SP",
+    category: "Technic",
+    pieces: 1478,
+    difficulty: 5,
+    buildTime: "זמן לא ידוע",
+    year: 2023,
+    description: "שחזור טכניק של אופנוע ימהה MT-10 SP עם 1,478 חלקים. כולל מנוע 4 בוכנות, מתלים, גלגלים עם פנאומטיקה ועיצוב מפורט מהמודל האמיתי.",
+    funFact: "הימהה MT-10 SP מציגה פרטי מנוע עובדים ומתלי קפיץ אמיתיים — בדיוק כמו האופנוע המקורי!",
+    image: "/brickbygal/motorbike.jpeg",
+    images: ["/brickbygal/motorbike.jpeg", "/brickbygal/motorbike1.jpeg", "/brickbygal/motorbike2.jpeg"],
+    setNumber: "42159"
   }
 ]
